@@ -1,9 +1,10 @@
-import { styled,keyframes } from '@mui/material';
+import { styled } from '@mui/material';
 import {
   advanced3DRotation,
   backgroundFadeIn,
   bounce,
   continuousTwistRotation,
+  flipAndPulse1,
   glowingBorder,
   gradientColorTransition,
   gradientGlow,
@@ -24,9 +25,6 @@ import {
   wobble,
   zoom,
 } from './AnimationsHeader';
-import { flip } from '@popperjs/core';
-
-
 
 export const MainContainer = styled('div')(({ isSticky }) => ({
   width: '100%',
@@ -37,18 +35,17 @@ export const MainContainer = styled('div')(({ isSticky }) => ({
   position: 'fixed',
   top: 0,
   zIndex: 1000,
-  transition: 'background-color 1s ease', 
+  transition: 'background-color 1s ease',
   animation: isSticky
     ? `${verticalElasticAnimation} 1.5s ease-out, ${backgroundFadeIn} 1s ease`
-    : 'none', 
+    : 'none',
 }));
 
 export const HeaderContainer = styled('div')(({ isSticky }) => ({
   width: '100%',
-  maxWidth: '1536px',
+  maxWidth: '96rem',
   height: '100%',
   minHeight: '70px',
-  backgroundColor: isSticky ? ' rgba(24, 23, 39, 0.4)' : 'none',
   display: 'flex',
   alignItems: 'center',
   justifyContent: 'center',
@@ -64,8 +61,7 @@ export const HeaderContainer = styled('div')(({ isSticky }) => ({
 
 export const HeaderNav = styled('div')(({ isSticky }) => ({
   width: '100%',
-  maxWidth: '1300px',
-  backgroundColor: isSticky ? ' rgba(24, 23, 39, 0.4)' : 'none',
+  maxWidth: '81.25rem',
   height: '70px',
   display: 'flex',
   justifyContent: 'space-between',
@@ -348,7 +344,7 @@ export const IconResumeContainer = styled('div')(() => ({
   '&:hover p ion-icon': {
     transform: 'scale(1.1)',
     color: 'green',
-    animation: `${flip} 1s ease-in-out infinite, ${shadowPulse} 1s ease-in-out `,
+    animation: `${flipAndPulse1} 1s ease-in-out infinite, ${shadowPulse} 1s ease-in-out `,
   },
   '&:hover p span': {
     color: 'green',

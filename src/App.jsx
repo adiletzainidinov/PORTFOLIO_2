@@ -1,14 +1,20 @@
 import React from 'react';
-import Header from './components/header/Header';
+import { RouterProvider, createBrowserRouter } from 'react-router-dom';
+import AppRouter from '../pages/AppRouter';
+import ErrorPage from '../pages/ErrorPage ';
+
 
 const App = () => {
+  const router = createBrowserRouter([
+    {
+      path: '/',
+      element: <AppRouter/>,
+      errorElement: <ErrorPage/>
+    },
+  ]);
+
   return (
-    <>
-      <div style={{ color: 'white',height: '100%', }}>
-        <Header />
-        <p>lorem10000</p>
-      </div>
-    </>
+    <RouterProvider router={router}/>
   );
 };
 

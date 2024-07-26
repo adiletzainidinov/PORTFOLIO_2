@@ -275,15 +275,26 @@ export const wobble = keyframes`
   }
 `;
 
-export const flip = keyframes`
+export const flipAndPulse1 = keyframes`
   0% {
     transform: perspective(400px) rotateY(0deg);
+    box-shadow: 0 0 0px rgba(0, 0, 0, 0.2);
+  }
+  25% {
+    transform: perspective(400px) rotateY(90deg);
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
   }
   50% {
     transform: perspective(400px) rotateY(180deg);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+  }
+  75% {
+    transform: perspective(400px) rotateY(270deg);
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
   }
   100% {
     transform: perspective(400px) rotateY(360deg);
+    box-shadow: 0 0 0px rgba(0, 0, 0, 0.2);
   }
 `;
 
