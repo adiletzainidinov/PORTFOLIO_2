@@ -16,6 +16,20 @@ export const StyledBox = styled('div')(() => ({
   maxWidth: '1536px',
   display: 'flex',
   justifyContent: 'center',
+  
+  '@media (max-width: 1200px)': {
+    width: '100%',
+  },
+  '@media (max-width: 990px)': {
+    width: '100%',
+  },
+  '@media (max-width: 766px)': {
+    width: '100%',
+    maxWidth: '500px',
+    display: 'flex',
+    justifyContent: 'space-between',
+    margin: '0 40px',
+  },
 }));
 
 export const ContentBox = styled('div')(() => ({
@@ -26,16 +40,43 @@ export const ContentBox = styled('div')(() => ({
   display: 'flex',
   justifyContent: 'space-between',
   alignItems: 'center',
+  '@media (max-width: 1200px)': {
+    width: '100%',
+    maxWidth: '936px',
+  },
+  '@media (max-width: 990px)': {
+    width: '100%',
+    flexWrap: 'wrap',
+    justifyContent: 'center',
+    margin: '20px 0',
+    gap: 20,
+    maxWidth: '736px',
+  },
+  '@media (max-width: 420px)': {
+    width: '100%',
+    maxWidth: '300px',
+    margin: '20px auto'
+  },
 }));
 
 export const Title = styled('h2')(() => ({
   fontSize: 18,
   fontWeight: 500,
+  '@media (max-width: 990px)': {
+    fontSize: 16,
+  },
+  '@media (max-width: 420px)': {
+    width: '100%',
+    padding: '0 20px 0 70px'
+  },
 }));
 
 export const SubTitle = styled('h2')(() => ({
   fontSize: 18,
   fontWeight: 500,
+  '@media (max-width: 990px)': {
+    fontSize: 16,
+  },
 }));
 
 export const IconsFooter = styled('div')(() => ({
@@ -64,7 +105,7 @@ export const IconBox = styled('div')`
   }
 
   &:hover {
-    background-color: none; 
+    background-color: none;
     transform: scale(1.2);
 
     & ion-icon {
@@ -82,39 +123,38 @@ export const IconBox = styled('div')`
   }
 `;
 
-
 export const IconImg = styled('div')`
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 25px; 
+  width: 25px;
   height: 25px;
   cursor: pointer;
   transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out;
   z-index: 10;
   & img {
     border-radius: 50%;
-    width: 100%; 
+    width: 100%;
     height: 100%;
     transition: transform 0.3s ease-in-out, filter 0.3s ease-in-out;
   }
 
   &:hover {
-    transform: scale(1.2); 
+    transform: scale(1.2);
     transform: rotate(720deg);
 
     & img {
-      transform: scale(1.1); 
-      filter: brightness(1.2); 
+      transform: scale(1.1);
+      filter: brightness(1.2);
     }
   }
 
   &:active {
-    transform: scale(1.1); 
+    transform: scale(1.1);
     transition: transform 0.1s ease-in-out;
 
     & img {
-      transform: scale(1); 
+      transform: scale(1);
     }
   }
 `;
