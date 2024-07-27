@@ -56,6 +56,7 @@ export const ContentBox = styled('div')(() => ({
 export const Title = styled('h2')(() => ({
   fontSize: 18,
   fontWeight: 500,
+  color: 'white',
   '@media (max-width: 990px)': {
     width: '100%',
     fontSize: 16,
@@ -75,13 +76,13 @@ export const Title = styled('h2')(() => ({
     margin: '0 auto',
     marginRight: 50,
     marginTop: 20,
-
   },
 }));
 
 export const SubTitle = styled('p')(() => ({
   fontSize: 18,
   fontWeight: 500,
+  color: 'white',
   '@media (max-width: 990px)': {
     width: '100%',
     fontSize: 16,
@@ -107,6 +108,7 @@ export const SubTitle = styled('p')(() => ({
 export const IconsFooter = styled('div')(() => ({
   display: 'flex',
   gap: 20,
+  color: 'white',
   '@media (max-width: 766px)': {
     marginLeft: 40,
     marginTop: 20,

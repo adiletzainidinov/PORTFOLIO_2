@@ -3,7 +3,7 @@ import { styled } from '@mui/material/styles';
 import gsap from 'gsap';
 import { CSSPlugin } from 'gsap/CSSPlugin';
 import { MotionPathPlugin } from 'gsap/MotionPathPlugin';
-import MyPhoto from '../../assets/images/MyPhoto.jpg';
+import MyPhoto from '../../../assets/images/MyPhoto.jpg';
 
 gsap.registerPlugin(CSSPlugin, MotionPathPlugin);
 

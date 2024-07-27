@@ -9,7 +9,7 @@ import {
   SubTitle,
   Title,
 } from './StyledFooter';
-import Telegram from '../../assets/images/telegram.jpg';
+import Telegram from '../../../assets/images/telegram.jpg';
 
 const Footer = () => {
   return (

@@ -1,8 +1,8 @@
 import React from 'react';
-import aboutMe from '../../assets/images/about-me.png';
+import aboutMe from '../../../assets/images/about-me.png';
 import { AnimatedBox, BoxLeft, ImgBox, StyledImage } from './StyleAboutMe';
-import SpinnerPic from '../../assets/images/spiner-pic.png';
-import WorkingEmoji from '../../assets/images/working-emoji.png';
+import SpinnerPic from '../../../assets/images/spiner-pic.png';
+import WorkingEmoji from '../../../assets/images/working-emoji.png';
 
 const LeftContentAboutMe = () => {
   return (

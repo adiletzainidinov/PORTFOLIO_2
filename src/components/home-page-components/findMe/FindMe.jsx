@@ -1,5 +1,5 @@
 import React from 'react';
-import Telegram from '../../assets/images/telegram.jpg';
+import Telegram from '../../../assets/images/telegram.jpg';
 import { ConnectStyle, ContentBox, FindStyle, IconTelegram, IconsLogo, IconsStyle, StyledBox } from './StyledFindMe';
 import { Container } from '@mui/material';
 
