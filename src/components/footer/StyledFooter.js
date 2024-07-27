@@ -1,4 +1,5 @@
 import { styled } from '@mui/material';
+import { width } from '@mui/system';
 
 export const Container = styled('div')(() => ({
   width: '100%',
@@ -16,19 +17,13 @@ export const StyledBox = styled('div')(() => ({
   maxWidth: '1536px',
   display: 'flex',
   justifyContent: 'center',
-  
   '@media (max-width: 1200px)': {
     width: '100%',
+    maxWidth: '1200px',
   },
   '@media (max-width: 990px)': {
     width: '100%',
-  },
-  '@media (max-width: 766px)': {
-    width: '100%',
-    maxWidth: '500px',
-    display: 'flex',
-    justifyContent: 'space-between',
-    margin: '0 40px',
+    maxWidth: '990px',
   },
 }));
 
@@ -46,16 +41,15 @@ export const ContentBox = styled('div')(() => ({
   },
   '@media (max-width: 990px)': {
     width: '100%',
-    flexWrap: 'wrap',
-    justifyContent: 'center',
-    margin: '20px 0',
-    gap: 20,
     maxWidth: '736px',
   },
-  '@media (max-width: 420px)': {
+  '@media (max-width: 766px)': {
     width: '100%',
-    maxWidth: '300px',
-    margin: '20px auto'
+    maxWidth: '500px',
+    display: 'flex',
+    justifyContent: 'center',
+    flexWrap: 'wrap',
+    margin: '0 40px',
   },
 }));
 
@@ -63,25 +57,66 @@ export const Title = styled('h2')(() => ({
   fontSize: 18,
   fontWeight: 500,
   '@media (max-width: 990px)': {
+    width: '100%',
     fontSize: 16,
   },
-  '@media (max-width: 420px)': {
-    width: '100%',
-    padding: '0 20px 0 70px'
+  '@media (max-width: 766px)': {
+    display: 'block',
+    width: 'auto',
+    height: 'auto',
+    margin: '0 auto',
+    marginRight: 50,
+    marginTop: 20,
+  },
+  '@media (max-width: 600px)': {
+    display: 'inline',
+    width: 'auto',
+    height: 'auto',
+    margin: '0 auto',
+    marginRight: 50,
+    marginTop: 20,
+
   },
 }));
 
-export const SubTitle = styled('h2')(() => ({
+export const SubTitle = styled('p')(() => ({
   fontSize: 18,
   fontWeight: 500,
   '@media (max-width: 990px)': {
+    width: '100%',
     fontSize: 16,
+  },
+  '@media (max-width: 766px)': {
+    display: 'block',
+    width: 'auto',
+    height: 'auto',
+    margin: '0 auto',
+    marginLeft: 190,
+    marginTop: 10,
+  },
+  '@media (max-width: 600px)': {
+    display: 'block',
+    width: 'auto',
+    height: 'auto',
+    margin: '0 auto',
+    marginLeft: 0,
+    marginTop: 10,
   },
 }));
 
 export const IconsFooter = styled('div')(() => ({
   display: 'flex',
   gap: 20,
+  '@media (max-width: 766px)': {
+    marginLeft: 40,
+    marginTop: 20,
+    marginBottom: 20,
+  },
+  '@media (max-width: 600px)': {
+    marginLeft: 20,
+    marginTop: 20,
+    marginBottom: 20,
+  },
 }));
 
 export const IconBox = styled('div')`
