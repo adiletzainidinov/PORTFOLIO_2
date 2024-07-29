@@ -1,24 +1,31 @@
 import React from 'react';
 import { RouterProvider, createBrowserRouter } from 'react-router-dom';
-import AppRouter from './pages/app-router/AppRouter';
 import ErrorPage from './pages/error-page/ErrorPage ';
-import About from './pages/about/About';
 import Layout from './layouts/Layout';
+import Home from './pages/home/AppRouter';
+import About from './pages/about/About';
+import Projects from './pages/projects/Projects';
 
 const App = () => {
   const router = createBrowserRouter([
     {
       path: '/',
-      element: <AppRouter />,
-      errorElement: <ErrorPage />,
-    },
-    {
-      path: '/about',
       element: <Layout />,
-      children: [{
-        path: 'about',
-        element: <About/>
-      }],
+      errorElement: <ErrorPage />,
+      children: [
+        {
+          path: '/',
+          element: <Home />,
+        },
+        {
+          path: 'about',
+          element: <About/>
+        },
+        {
+          path: 'projects',
+          element: <Projects/>
+        }
+      ],
     },
   ]);
 
@@ -26,3 +33,12 @@ const App = () => {
 };
 
 export default App;
+
+// {
+//   path: '/about',
+//   element: <Layout />,
+//   children: [{
+//     path: 'about',
+//     element: <About/>
+//   }],
+// },

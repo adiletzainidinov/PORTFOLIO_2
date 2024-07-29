@@ -1,9 +1,15 @@
+import { useNavigate } from "react-router"
 import { IconProjectsContainer, ProjectsContainer } from "./StyledHeader"
 
 const ProjectsHeader = () => {
+  const navigate = useNavigate()
+
+  const handleRouter = () => {
+    navigate('projects')
+  }
   return (
     <>
-       <ProjectsContainer>
+       <ProjectsContainer onClick={handleRouter}>
               <IconProjectsContainer>
                 <p>
                   <ion-icon name="desktop-outline"></ion-icon>

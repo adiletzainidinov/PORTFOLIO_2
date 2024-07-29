@@ -5,11 +5,16 @@ export const Container = styled('div')(() => ({
   width: '100%',
   height: '100%',
   minHeight: 60,
-  backgroundColor: 'red',
   display: 'flex',
   flexDirection: 'column',
   alignItems: 'center',
   backgroundColor: 'rgba(24, 23, 39, 0.4)',
+  '@media (max-width: 1200px)': {
+    width: '100%',
+  },
+  '@media (max-width: 990px)': {
+    width: '100%',
+  },
 }));
 
 export const StyledBox = styled('div')(() => ({
@@ -130,6 +135,7 @@ export const IconBox = styled('div')`
   border-radius: 50%;
   transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
   z-index: 10;
+  cursor: pointer;
 
   & p {
     margin: 0;

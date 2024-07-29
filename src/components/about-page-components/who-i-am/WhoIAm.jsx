@@ -1,12 +1,19 @@
-import { Container } from 'postcss'
-import React from 'react'
+import React from 'react';
+import { Container, ContentBox, StyledBox } from './styleWhoIAm';
+import Left from './Left';
+import Right from './Right';
 
 const WhoIAm = () => {
   return (
     <Container>
-        lorem1000
+      <StyledBox>
+        <ContentBox>
+          <Left />
+          <Right />
+        </ContentBox>
+      </StyledBox>
     </Container>
-  )
-}
+  );
+};
 
-export default WhoIAm
+export default WhoIAm;

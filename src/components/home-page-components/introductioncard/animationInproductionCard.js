@@ -2,27 +2,27 @@ import { keyframes } from '@emotion/react';
 
 export const typing = keyframes`
   from { width: 0; }
-  to { width: 58%; }
+  to { width: 68%; }
 `;
 export const typingSecond = keyframes`
   from { width: 0; }
-  to { width: 90%; }
+  to { width: 105%; }
 `;
 export const typingThird = keyframes`
   from { width: 0; }
-  to { width: 110%; }
+  to { width: 125%; }
 `;
 export const typingFour = keyframes`
   from { width: 0; }
-  to { width: 85%; }
+  to { width: 95%; }
 `;
 export const typingFive = keyframes`
   from { width: 0; }
-  to { width: 130%; }
+  to { width: 150%; }
 `;
 export const typingSix = keyframes`
   from { width: 0; }
-  to { width: 95%; }
+  to { width: 110%; }
 `;
 
 export const colorChange = keyframes`

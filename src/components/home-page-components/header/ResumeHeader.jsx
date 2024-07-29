@@ -1,9 +1,15 @@
+import { useNavigate } from "react-router"
 import { IconResumeContainer, ResumeContainer } from "./StyledHeader"
 
 const ResumeHeader = () => {
+  const navigate = useNavigate()
+
+  const handleRouter = () => {
+    navigate('resume')
+  }
   return (
     <>
-    <ResumeContainer>
+    <ResumeContainer onClick={handleRouter}>
               <IconResumeContainer>
                 <p>
                   <ion-icon name="newspaper-outline"></ion-icon>

@@ -7,7 +7,7 @@ import {
   SubTitle,
   TitleContainer,
   TypingText,
-  Github
+  Github,
 } from './StyleIntroductionCard';
 import LinkedinComponent from './Linkedin';
 
@@ -16,23 +16,30 @@ const LeftCard = () => {
     <>
       <LeftCardContainer>
         <TitleContainer>
-          <StaticText variant="h1">Hi, I'm Adilet (Adi)</StaticText>
+          <StaticText variant="h1">Привет, я — Адилет (Ади).</StaticText>
           <BoxFlex>
             <StaticText variant="h1" spaced>
-              I AM A
+              Я
             </StaticText>
-            <TypingText variant="h1">Frontend Developer</TypingText>
+            <TypingText variant="h1">Frontend-разработчик</TypingText>
           </BoxFlex>
         </TitleContainer>
 
         <SubTitle>
-          As an experienced <span style={{color: '#ae08bc',animation: 'none'}}>Front-End Stack Developer </span>, I am dedicated to
-          translating ideas into innovative web applications. Check out my
-          recent  <span style={{color: '#ae08bc',animation: 'none'}}>projects</span> and <span style={{color: '#ae08bc',animation: 'none'}}>articles</span> showcasing my Front-End development
-          skills. <span>📍</span>
+          Как опытный{' '}
+          <span style={{ color: '#ae08bc', animation: 'none' }}>
+            Frontend-разработчик
+          </span>
+          , я посвящаю себя воплощению идей в инновационные веб-приложения.
+          Ознакомьтесь с моими недавними{' '}
+          <span style={{ color: '#ae08bc', animation: 'none' }}>проектами</span>{' '}
+          и{' '}
+          <span style={{ color: '#ae08bc', animation: 'none' }}>статьями</span>,
+          которые демонстрируют мои навыки в Front-End разработке.{' '}
+          <span>📍</span>
         </SubTitle>
         <SocialMedia>
-         <LinkedinComponent/>
+          <LinkedinComponent />
           <Github>
             <p>
               <ion-icon name="logo-github"></ion-icon>

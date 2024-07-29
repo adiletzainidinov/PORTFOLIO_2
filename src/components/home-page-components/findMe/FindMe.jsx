@@ -9,9 +9,9 @@ const FindMe = () => {
       <Container>
         <StyledBox>
           <ContentBox>
-            <FindStyle>FIND ME ON</FindStyle>
+            <FindStyle>НАЙДИТЕ МЕНЯ В</FindStyle>
             <ConnectStyle>
-              Feel free to <span style={{color: '#ae08bc'}}>connect</span> with me
+            Не стесняйтесь <span style={{color: '#ae08bc'}}>связаться</span> со мной.
             </ConnectStyle>
             <IconsStyle>
               <IconsLogo>
