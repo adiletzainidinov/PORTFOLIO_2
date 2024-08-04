@@ -20,6 +20,14 @@ const FirstProject = () => {
       videoRef.current.playbackRate = 3;
     }
   }, []);
+
+  const openInNewTab = (url) => {
+    window.open(url, '_blank');
+  };
+  
+  const handleClick = () => {
+    openInNewTab('https://flexbox-froggy-tan.vercel.app/');
+  };
   return (
     <FirstContainer>
       <Left>
@@ -32,24 +40,24 @@ const FirstProject = () => {
           для своих веб-сайтов.
         </SubTitleFirst>
         <BoxButton>
-          <Button>TypeScript</Button>
+          <Button>Type-Script</Button>
           <Button>Uuid</Button>
           <Button>Mui</Button>
-          <Button>ReduxToolkit</Button>
-          <Button>ReduxPersist</Button>
-          <Button>ReactHookForm</Button>
-          <Button>IonIcons</Button>
+          <Button>Redux-Toolkit</Button>
+          <Button>Redux-Persist</Button>
+          <Button>React-HookForm</Button>
+          <Button>Ion-Icons</Button>
         </BoxButton>
         <LinkFirst>
           <a href="https://github.com/adiletzainidinov/FLEXBOX_FROGGY">
-            <p>
+            <p className='code'>
               Код
               <span>
                 <ion-icon name="logo-github"></ion-icon>
               </span>
             </p>
           </a>
-          <a href="https://flexbox-froggy-tan.vercel.app/">
+          <a href="https://flexbox-froggy-tan.vercel.app/" target="_blank" rel="noopener noreferrer">
             <h2>
               Демонстрация
               <span>
@@ -60,7 +68,7 @@ const FirstProject = () => {
         </LinkFirst>
       </Left>
       <Right>
-        <Video ref={videoRef} src={videoSrc} autoPlay loop muted />
+        <Video onClick={handleClick} ref={videoRef} src={videoSrc} autoPlay loop muted />
       </Right>
     </FirstContainer>
   );
