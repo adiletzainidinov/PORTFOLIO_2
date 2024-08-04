@@ -39,6 +39,7 @@ export const MainContainer = styled('div')(({ isSticky }) => ({
   animation: isSticky
     ? `${verticalElasticAnimation} 1.5s ease-out, ${backgroundFadeIn} 1s ease`
     : 'none',
+
 }));
 
 export const HeaderContainer = styled('div')(({ isSticky }) => ({
@@ -56,6 +57,10 @@ export const HeaderContainer = styled('div')(({ isSticky }) => ({
   '@media (max-width: 990px)': {
     width: '100%',
     maxWidth: '990px',
+  },
+  '@media (max-width: 320px)': {
+    width: '100%',
+    maxWidth: '200px'
   },
 }));
 
@@ -81,6 +86,9 @@ export const HeaderNav = styled('div')(({ isSticky }) => ({
     display: 'flex',
     justifyContent: 'space-between',
     margin: '0 40px',
+  },
+  '@media (max-width: 320px)': {
+    margin: '0px',
   },
 }));
 

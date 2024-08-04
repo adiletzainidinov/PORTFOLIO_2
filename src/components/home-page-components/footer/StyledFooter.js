@@ -56,6 +56,9 @@ export const ContentBox = styled('div')(() => ({
     flexWrap: 'wrap',
     margin: '0 40px',
   },
+  '@media (max-width: 320px)': {
+    margin: '0px',
+  },
 }));
 
 export const Title = styled('h2')(() => ({
@@ -82,6 +85,9 @@ export const Title = styled('h2')(() => ({
     marginRight: 50,
     marginTop: 20,
   },
+  '@media (max-width: 320px)': {
+    margin: '0px',
+  },
 }));
 
 export const SubTitle = styled('p')(() => ({
@@ -107,6 +113,9 @@ export const SubTitle = styled('p')(() => ({
     margin: '0 auto',
     marginLeft: 0,
     marginTop: 10,
+  },
+  '@media (max-width: 320px)': {
+    margin: '0px',
   },
 }));
 

@@ -6,14 +6,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Vite + React</title>
     <link rel="stylesheet" href="./src/index.css" />
+    <style>
+      .responsive-element {
+        position: absolute;
+        top: 0px;
+        align-self: center;
+      }
+
+      @media (max-width: 320px) {
+        .responsive-element {
+          max-width: 150px;
+        }
+      }
+    </style>
   </head>
   <body>
     <div style="display: flex; flex-direction: column">
       <div id="root"></div>
-      <canvas
-        id="canvas"
-        style="position: absolute; top: 0px; align-self: center"
-      ></canvas>
+      <canvas id="canvas" class="responsive-element"></canvas>
     </div>
 
     <script type="module" src="/src/main.jsx"></script>
@@ -28,6 +38,5 @@
     ></script>
   </body>
 </html>
-
 
 <!-- media: 1200px, 990px,766px,530px,600,420,360px?  -->

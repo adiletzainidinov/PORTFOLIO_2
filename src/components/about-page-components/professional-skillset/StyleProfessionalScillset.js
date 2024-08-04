@@ -1,6 +1,5 @@
 import { styled } from '@mui/material';
 import { keyframes } from '@mui/system';
-import { space } from 'postcss/lib/list';
 
 export const Container = styled('div')(() => ({
   width: '100%',
@@ -45,12 +44,20 @@ export const Title = styled('h2')(() => ({
   },
   '@media (max-width: 600px)': {
     width: '100%',
+    maxWidth: '350px',
     fontSize: 32,
     marginLeft: 30,
   },
   '@media (max-width: 420px)': {
     width: '100%',
     fontSize: 22,
+    maxWidth: '150px',
+    marginLeft: 70,
+    marginRight: 0,
+  },
+  '@media (max-width: 320px)': {
+    maxWidth: '100px',
+    marginLeft: 30,
   },
 }));
 export const TitleTools = styled('h2')(() => ({
@@ -64,12 +71,20 @@ export const TitleTools = styled('h2')(() => ({
   },
   '@media (max-width: 600px)': {
     width: '100%',
+    maxWidth: '350px',
     fontSize: 32,
     marginLeft: 30,
   },
   '@media (max-width: 420px)': {
     width: '100%',
     fontSize: 22,
+    maxWidth: '150px',
+    marginLeft: 70,
+    marginRight: 0,
+  },
+  '@media (max-width: 320px)': {
+    maxWidth: '100px',
+    marginLeft: 30,
   },
 }));
 

@@ -374,6 +374,10 @@ export const SecondRight = styled('div')(() => ({
   width: '100%',
   maxWidth: '650px',
   marginRight: 40,
+  '@media (max-width: 420px)': {
+    marginRight: 0,
+
+  },
 }));
 
 export const TitleSecond = styled('div')(() => ({
@@ -407,7 +411,7 @@ export const SubTitleSecond = styled('div')(() => ({
 
 export const SecondButtons = styled('div')(() => ({
   width: '100%',
-  maxWidth: '550px',
+  maxWidth: '500px',
   display: 'flex',
   justifyContent: 'space-around',
   gap: 20,
@@ -432,7 +436,7 @@ export const SecondButtons = styled('div')(() => ({
   },
   '@media (max-width: 420px)': {
     width: '100%',
-    maxWidth: '300px',
+    maxWidth: '200px',
     flexWrap: 'wrap',
     marginLeft: 25,
     marginRight: 10,
@@ -492,6 +496,7 @@ export const LinkSecond = styled('div')(() => ({
   },
   '@media (max-width: 420px)': {
     width: '100%',
+    maxWidth: '180px',
     flexWrap: 'wrap',
     marginLeft: 65,
   },
@@ -583,7 +588,7 @@ export const ButtonsThird = styled('div')(() => ({
   },
   '@media (max-width: 420px)': {
     width: '100%',
-    maxWidth: '300px',
+    maxWidth: '240px',
     flexWrap: 'wrap',
     marginLeft: 0,
   },
@@ -642,6 +647,7 @@ export const LinkThird = styled('div')(() => ({
   },
   '@media (max-width: 420px)': {
     width: '100%',
+    maxWidth: '180px',
     flexWrap: 'wrap',
     marginLeft: 65,
   },
