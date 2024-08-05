@@ -39,7 +39,6 @@ export const MainContainer = styled('div')(({ isSticky }) => ({
   animation: isSticky
     ? `${verticalElasticAnimation} 1.5s ease-out, ${backgroundFadeIn} 1s ease`
     : 'none',
-
 }));
 
 export const HeaderContainer = styled('div')(({ isSticky }) => ({
@@ -60,7 +59,7 @@ export const HeaderContainer = styled('div')(({ isSticky }) => ({
   },
   '@media (max-width: 320px)': {
     width: '100%',
-    maxWidth: '200px'
+    maxWidth: '200px',
   },
 }));
 
@@ -106,6 +105,10 @@ export const HeaderNavMain = styled('div')(() => ({
 
 // Butger-Meny
 
+export const BurgerContainer = styled('div')(() => ({
+  position: 'relative',
+}));
+
 export const BurgerHeaderMeny = styled('div')(() => ({
   display: 'none',
   '@media (max-width: 766px)': {
@@ -121,6 +124,101 @@ export const BurgerHeaderMeny = styled('div')(() => ({
     '&:hover': {
       animation: `${hoverBounceSpin} 1.2s ease-in-out`,
     },
+    '&:active': {
+      animation: `${hoverBounceSpin} 1.2s ease-in-out`,
+    },
+  },
+}));
+
+export const BurgerNav = styled('div')(({ isVisibility }) => ({
+  width: '100%',
+  minWidth: 300,
+  height: '100%',
+  minHeight: 440,
+  borderRadius: 10,
+  border: '2px solid white',
+  backgroundColor: '#0a0910',
+  color: 'white',
+  position: 'absolute',
+  top: 60,
+  right: 30,
+  display: 'flex',
+  padding: 20,
+  gap: 20,
+  display: isVisibility ? 'block' : 'none',
+  '& button': {
+    width: '100%',
+    marginTop: 30,
+  },
+  '& .homeHeader': {
+    backgroundColor: 'red',
+  },
+  '@media (max-width: 420px)': {
+    width: '100%',
+    minWidth: 200,
+  },
+  '@media (min-width: 767px)': {
+    display: 'none',
+  },
+}));
+
+export const HeaderBox = styled('div')(() => ({
+  paddingRight: 220,
+  borderBottom: '2px solid white',
+  marginBottom: 10,
+  '@media (max-width: 420px)': {
+    width: '100%',
+    paddingRight: 120,
+  },
+}));
+
+export const AboutHeaderBox = styled('div')(() => ({
+  paddingRight: 180,
+  borderBottom: '2px solid white',
+  marginBottom: 10,
+  '@media (max-width: 420px)': {
+    width: '100%',
+    paddingRight: 80,
+  },
+}));
+
+export const ProjectsHeaderBox = styled('div')(() => ({
+  paddingRight: 160,
+  borderBottom: '2px solid white',
+  marginBottom: 10,
+  '@media (max-width: 420px)': {
+    width: '100%',
+    paddingRight: 60,
+  },
+}));
+
+export const ResumeHeaderBox = styled('div')(() => ({
+  paddingRight: 160,
+  borderBottom: '2px solid white',
+  marginBottom: 10,
+  '@media (max-width: 420px)': {
+    width: '100%',
+    paddingRight: 60,
+  },
+}));
+
+export const BlogsHeaderBox = styled('div')(() => ({
+  paddingRight: 180,
+  borderBottom: '2px solid white',
+  marginBottom: 10,
+  '@media (max-width: 420px)': {
+    width: '100%',
+    paddingRight: 80,
+  },
+}));
+
+export const GitHubIconsHeaderBox = styled('div')(() => ({
+  paddingRight: 195,
+  borderBottom: '2px solid white',
+  marginBottom: 10,
+  '@media (max-width: 420px)': {
+    width: '100%',
+    paddingRight: 95,
   },
 }));
 
