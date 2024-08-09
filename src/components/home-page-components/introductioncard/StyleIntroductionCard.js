@@ -196,7 +196,7 @@ export const SubTitle = styled('h2')(() => ({
   },
   '@media (max-width: 420px)': {
     width: '100%',
-    fontSize: '10px',
+    fontSize: '12px',
   },
 }));
 

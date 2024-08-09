@@ -1,5 +1,8 @@
 import { useNavigate } from 'react-router';
-import { BlogsContainer, IconBlogsContainer } from './StyledHeader';
+import {
+  BlogsContainer,
+  IconBlogsContainer,
+} from '../style-animation/StyledHeader';
 
 const BlogsHeader = () => {
   const navigate = useNavigate();

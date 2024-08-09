@@ -1,31 +1,17 @@
 import { useState, useEffect } from 'react';
 import {
-  BurgerHeaderMeny,
-  BurgerNav,
   HeaderContainer,
   HeaderNav,
-  HeaderNavMain,
   MainContainer,
-  BurgerContainer,
-  HeaderBox,
-  AboutHeaderBox,
-  ProjectsHeaderBox,
-  ResumeHeaderBox,
-  BlogsHeaderBox,
-  GitHubIconsHeaderBox,
-} from './StyledHeader';
-import Logo from './Logo';
-import HomeHeader from './HomeHeader';
-import AboutHeader from './AboutHeader';
-import ProjectsHeader from './ProjectsHeader';
-import ResumeHeader from './ResumeHeader';
-import BlogsHeader from './BlogsHeader';
-import GitHubIconsHeader from './GitHubIconsHeader';
-import Button from '../../../shared/UI/button/Button';
+} from './style-animation/StyledHeader';
+import Logo from './burger-logo/Logo';
+import BurgerMeny from './burger-logo/BurgerMeny';
+import HeaderNavigation from './header-navigation/HeaderNavigation';
 
 const Header = () => {
   const [isSticky, setIsSticky] = useState(false);
   const [isVisibility, setIsVisibility] = useState(false);
+  const [adminIsVisibility, setAdminIsVisibility] = useState(false);
 
   useEffect(() => {
     const scrollHandler = () => {
@@ -47,70 +33,40 @@ const Header = () => {
     setIsVisibility(false);
   };
 
+  const handleAdminIsvisibilityFalse = () => {
+    setAdminIsVisibility(false);
+  };
+
+  const handleAdminIsvisibilityTrue = () => {
+    setAdminIsVisibility(true);
+  };
+
+  const handleAdminIsvisibilityToggle = () => {
+    setAdminIsVisibility((prev) => !prev);
+  };
+
   return (
     <MainContainer isSticky={isSticky}>
       <HeaderContainer isSticky={isSticky}>
         <HeaderNav isSticky={isSticky}>
           <Logo />
 
-          <HeaderNavMain>
-            <HomeHeader />
+          <HeaderNavigation
+            handleAdminIsvisibilityFalse={handleAdminIsvisibilityFalse}
+            handleAdminIsvisibilityTrue={handleAdminIsvisibilityTrue}
+            adminIsVisibility={adminIsVisibility}
+            handleAdminIsvisibilityToggle={handleAdminIsvisibilityToggle}
+          />
 
-            <AboutHeader />
-
-            <ProjectsHeader />
-
-            <ResumeHeader />
-
-            <BlogsHeader />
-
-            <GitHubIconsHeader />
-          </HeaderNavMain>
-
-          <BurgerContainer>
-            <BurgerHeaderMeny
-              isVisibility={isVisibility}
-              onClick={handleBurgerIsVisibilityTrue}
-            >
-              {isVisibility ? (
-                <p>
-                  <ion-icon name="close-outline"></ion-icon>
-                </p>
-              ) : (
-                <p>
-                  <ion-icon name="menu-outline"></ion-icon>
-                </p>
-              )}
-            </BurgerHeaderMeny>
-
-            <BurgerNav isVisibility={isVisibility}>
-              <HeaderBox onClick={handleBurgerIsVisibilityFalse}>
-                <HomeHeader className="homeHeader" />
-              </HeaderBox>
-
-              <AboutHeaderBox onClick={handleBurgerIsVisibilityFalse}>
-                <AboutHeader />
-              </AboutHeaderBox>
-
-              <ProjectsHeaderBox onClick={handleBurgerIsVisibilityFalse}>
-                <ProjectsHeader />
-              </ProjectsHeaderBox>
-
-              <ResumeHeaderBox onClick={handleBurgerIsVisibilityFalse}>
-                <ResumeHeader />
-              </ResumeHeaderBox>
-
-              <BlogsHeaderBox onClick={handleBurgerIsVisibilityFalse}>
-                <BlogsHeader />
-              </BlogsHeaderBox>
-
-              <GitHubIconsHeaderBox onClick={handleBurgerIsVisibilityFalse}>
-                <GitHubIconsHeader />
-              </GitHubIconsHeaderBox>
-
-              <Button onClick={handleBurgerIsVisibilityFalse}>Назад</Button>
-            </BurgerNav>
-          </BurgerContainer>
+          <BurgerMeny
+            isVisibility={isVisibility}
+            handleBurgerIsVisibilityTrue={handleBurgerIsVisibilityTrue}
+            handleBurgerIsVisibilityFalse={handleBurgerIsVisibilityFalse}
+            handleAdminIsvisibilityFalse={handleAdminIsvisibilityFalse}
+            handleAdminIsvisibilityTrue={handleAdminIsvisibilityTrue}
+            adminIsVisibility={adminIsVisibility}
+            handleAdminIsvisibilityToggle={handleAdminIsvisibilityToggle}
+          />
         </HeaderNav>
       </HeaderContainer>
     </MainContainer>

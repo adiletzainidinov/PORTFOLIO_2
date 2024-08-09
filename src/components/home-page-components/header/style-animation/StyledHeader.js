@@ -1,4 +1,4 @@
-import { styled } from '@mui/material';
+import { keyframes, styled } from '@mui/material';
 import {
   advanced3DRotation,
   backgroundFadeIn,
@@ -25,6 +25,7 @@ import {
   wobble,
   zoom,
 } from './AnimationsHeader';
+import Button from '../../../../shared/UI/button/Button';
 
 export const MainContainer = styled('div')(({ isSticky }) => ({
   width: '100%',
@@ -96,7 +97,8 @@ export const HeaderNavMain = styled('div')(() => ({
   maxWidth: '48.25rem',
   display: 'flex',
   justifyContent: 'space-between',
-  '@media (max-width: 766px)': {
+  position: 'relative',
+  '@media (max-width: 990px)': {
     width: '100%',
     maxWidth: '766px',
     display: 'none',
@@ -111,7 +113,7 @@ export const BurgerContainer = styled('div')(() => ({
 
 export const BurgerHeaderMeny = styled('div')(() => ({
   display: 'none',
-  '@media (max-width: 766px)': {
+  '@media (max-width: 990px)': {
     width: '100%',
     maxWidth: '60px',
     display: 'block',
@@ -130,11 +132,11 @@ export const BurgerHeaderMeny = styled('div')(() => ({
   },
 }));
 
-export const BurgerNav = styled('div')(({ isVisibility }) => ({
+export const BurgerNav = styled('div')(({ isVisibility,adminIsVisibility }) => ({
   width: '100%',
   minWidth: 300,
   height: '100%',
-  minHeight: 440,
+  minHeight: 510,
   borderRadius: 10,
   border: '2px solid white',
   backgroundColor: '#0a0910',
@@ -145,7 +147,7 @@ export const BurgerNav = styled('div')(({ isVisibility }) => ({
   display: 'flex',
   padding: 20,
   gap: 20,
-  display: isVisibility ? 'block' : 'none',
+  display: isVisibility  ? 'block' : 'none',
   '& button': {
     width: '100%',
     marginTop: 30,
@@ -157,8 +159,11 @@ export const BurgerNav = styled('div')(({ isVisibility }) => ({
     width: '100%',
     minWidth: 200,
   },
-  '@media (min-width: 767px)': {
+  '@media (min-width: 990px)': {
     display: 'none',
+  },
+  '@media (max-width: 990px)': {
+    // backgroundColor: adminIsVisibility ? 'red' : '#0a0910'
   },
 }));
 
@@ -219,6 +224,16 @@ export const GitHubIconsHeaderBox = styled('div')(() => ({
   '@media (max-width: 420px)': {
     width: '100%',
     paddingRight: 95,
+  },
+}));
+
+export const AdminHeaderBox = styled('div')(() => ({
+  paddingRight: 180,
+  borderBottom: '2px solid white',
+  marginBottom: 10,
+  '@media (max-width: 420px)': {
+    width: '100%',
+    paddingRight: 80,
   },
 }));
 
@@ -540,4 +555,142 @@ export const IconsContainer = styled('div')(() => ({
     animation: `${rotate3D} 1.5s ease-in-out, ${gradientGlow} 1.5s ease-in-out, ${pulseGlow} 1.5s ease-in-out`,
     color: '#fff',
   },
+}));
+
+// Admin
+
+export const AdminContainer = styled('div')(() => ({
+  display: 'flex',
+  alignItems: 'center',
+  justifyContent: 'center',
+  flexDirection: 'column',
+  width: '100%',
+  maxWidth: '85px',
+  padding: '10px',
+  cursor: 'pointer',
+  transition:
+    'border-bottom 0.3s ease-in-out, transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out, background-color 0.3s ease-in-out',
+  '&:hover': {
+    borderBottom: '4px solid #00ffff',
+    borderBottomRightRadius: '4px',
+    borderBottomLeftRadius: '4px',
+    transform: 'translateY(-5px)',
+    boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',
+    backgroundColor: 'rgba(0, 255, 255, 0.1)',
+  },
+  '@media (max-width: 990px)': {
+    // marginTop: 200
+  },
+}));
+
+const rotate = keyframes`
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+`;
+
+export const IconAdminContainer = styled('div')(() => ({
+  display: 'flex',
+  alignItems: 'center',
+  justifyContent: 'center',
+  transition: 'transform 0.3s ease-in-out, color 0.3s ease-in-out',
+  '& p': {
+    display: 'flex',
+    alignItems: 'center',
+    '& ion-icon': {
+      fontSize: '24px',
+      transition: 'transform 0.3s ease-in-out, color 0.3s ease-in-out',
+    },
+    '& span': {
+      display: 'block',
+      fontSize: '16px',
+      marginLeft: '5px',
+      transition: 'color 0.3s ease-in-out',
+    },
+  },
+  '&:hover p ion-icon': {
+    animation: `${rotate} 1s ease-in-out infinite`,
+    color: '#00ffff',
+  },
+  '&:hover p span': {
+    color: '#00ffff',
+  },
+}));
+
+// AdminMeny
+
+export const AdminMeny = styled('div')(() => ({
+  width: '100%',
+  maxWidth: 300,
+  height: '100%',
+  minHeight: 200,
+  borderRadius: 10,
+  boxShadow: '1px 1px 5px 1px rgba(0.1,0.1,0.1,0.1)',
+  backgroundColor: 'white',
+  position: 'absolute',
+  top: 40,
+  right: 20,
+  padding: 20,
+}));
+
+export const AdminMenyBurger = styled(AdminMeny)(() => ({
+  zIndex: 100,
+  maxHeight: 200,
+  marginTop: 360,
+  marginRight: 210,
+  '@media (max-width: 766px)': {
+    marginRight: 0,
+  },
+  '@media (max-width: 420px)': {
+    maxHeight: 220,
+  },
+}));
+
+const fadeIn = keyframes`
+  0% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+`;
+
+export const EditAccount = styled('div')`
+  color: black;
+  font-size: 18px;
+  font-weight: 500;
+  cursor: pointer;
+  animation: ${fadeIn} 0.5s ease-out;
+
+  .accaunt {
+    margin-bottom: 10px;
+    margin-top: 20px;
+    border-bottom: 2px solid black;
+    padding-bottom: 10px;
+    transition: color 0.3s ease;
+
+    &:hover {
+      color: #333399;
+    }
+  }
+
+  .tema {
+    margin-bottom: 30px;
+    border-bottom: 2px solid black;
+    padding-bottom: 10px;
+    transition: color 0.3s ease;
+
+    &:hover {
+      color: #333399;
+    }
+  }
+`;
+
+export const StyledButton = styled(Button)(() => ({
+  width: '100%',
 }));

@@ -248,6 +248,7 @@ export const MainText = styled('h2')(() => ({
   },
   '@media (max-width: 420px)': {
     width: '100%',
-    fontSize: 10,
+    fontSize: 12,
+    fontWeight: 500
   },
 }));
