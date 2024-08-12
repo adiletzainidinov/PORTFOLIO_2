@@ -5,6 +5,7 @@ import Layout from './layouts/Layout';
 import Home from './pages/home/AppRouter';
 import About from './pages/about/About';
 import Projects from './pages/projects/Projects';
+import Loader from './pages/loader/Loader';
 
 const App = () => {
   const router = createBrowserRouter([
@@ -19,26 +20,21 @@ const App = () => {
         },
         {
           path: 'about',
-          element: <About/>
+          element: <About />,
         },
         {
           path: 'projects',
-          element: <Projects/>
-        }
+          element: <Projects />,
+        },
       ],
     },
+    {
+      path: '/loading',
+      element: <Loader/>
+    }
   ]);
 
   return <RouterProvider router={router} />;
 };
 
 export default App;
-
-// {
-//   path: '/about',
-//   element: <Layout />,
-//   children: [{
-//     path: 'about',
-//     element: <About/>
-//   }],
-// },

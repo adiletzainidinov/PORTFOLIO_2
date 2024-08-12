@@ -1,4 +1,4 @@
-import { keyframes, styled } from '@mui/material';
+import { TextField, keyframes, styled } from '@mui/material';
 import {
   advanced3DRotation,
   backgroundFadeIn,
@@ -132,40 +132,39 @@ export const BurgerHeaderMeny = styled('div')(() => ({
   },
 }));
 
-export const BurgerNav = styled('div')(({ isVisibility,adminIsVisibility }) => ({
-  width: '100%',
-  minWidth: 300,
-  height: '100%',
-  minHeight: 510,
-  borderRadius: 10,
-  border: '2px solid white',
-  backgroundColor: '#0a0910',
-  color: 'white',
-  position: 'absolute',
-  top: 60,
-  right: 30,
-  display: 'flex',
-  padding: 20,
-  gap: 20,
-  display: isVisibility  ? 'block' : 'none',
-  '& button': {
+export const BurgerNav = styled('div')(
+  ({ isVisibility, adminIsVisibility }) => ({
     width: '100%',
-    marginTop: 30,
-  },
-  '& .homeHeader': {
-    backgroundColor: 'red',
-  },
-  '@media (max-width: 420px)': {
-    width: '100%',
-    minWidth: 200,
-  },
-  '@media (min-width: 990px)': {
-    display: 'none',
-  },
-  '@media (max-width: 990px)': {
-    // backgroundColor: adminIsVisibility ? 'red' : '#0a0910'
-  },
-}));
+    minWidth: 300,
+    height: '100%',
+    minHeight: 510,
+    borderRadius: 10,
+    border: '2px solid white',
+    backgroundColor: '#0a0910',
+    color: 'white',
+    position: 'absolute',
+    top: 60,
+    right: 30,
+    display: 'flex',
+    padding: 20,
+    gap: 20,
+    display: isVisibility ? 'block' : 'none',
+    '& button': {
+      width: '100%',
+      marginTop: 30,
+    },
+    '& .homeHeader': {
+      backgroundColor: 'red',
+    },
+    '@media (max-width: 420px)': {
+      width: '100%',
+      minWidth: 200,
+    },
+    '@media (min-width: 990px)': {
+      display: 'none',
+    },
+  })
+);
 
 export const HeaderBox = styled('div')(() => ({
   paddingRight: 220,
@@ -236,6 +235,70 @@ export const AdminHeaderBox = styled('div')(() => ({
     paddingRight: 80,
   },
 }));
+
+// Burger modal
+
+export const ModalContainerBurger = styled('div')(() => ({
+  '& h2': {
+    textAlign: 'center',
+    marginBottom: 40,
+  },
+}));
+
+export const TextFieldNameBurger = styled(TextField)(() => ({
+  width: '100%',
+  marginBottom: 20,
+}));
+
+export const TextFieldPasswordBurger = styled(TextField)(() => ({
+  width: '100%',
+  marginBottom: 20,
+}));
+
+export const TextFieldContainerLoginBurger = styled('div')(() => ({
+  position: 'relative',
+  '& p': {
+    position: 'absolute',
+    top: 15,
+    right: 20,
+    fontSize: 28,
+    zIndex: 20,
+    cursor: 'pointer',
+  },
+}));
+
+export const TextFieldContainerPasswordBurger = styled('div')(() => ({
+  position: 'relative',
+  '& p': {
+    position: 'absolute',
+    top: 15,
+    right: 20,
+    fontSize: 28,
+    zIndex: 20,
+    cursor: 'pointer',
+  },
+}));
+
+export const TextFieldContainerPasswordLineBurger = styled('div')(({showPasswordLine}) => ({
+  position: 'absolute',
+  width: 35,
+  height: 2,
+  color: 'black',
+  top: 28,
+  right: 18,
+  backgroundColor: 'black',
+  transform: 'rotate(-45deg)',
+  transformOrigin: 'center',
+  display: showPasswordLine ? 'none' : 'block',
+}));
+
+export const ButtonStyleBurger = styled(Button)(() => ({
+  width: '100%',
+  marginBottom: 10,
+  marginTop: 20,
+}));
+
+
 
 // Logo
 
@@ -693,4 +756,66 @@ export const EditAccount = styled('div')`
 
 export const StyledButton = styled(Button)(() => ({
   width: '100%',
+}));
+
+// admin
+
+export const ModalContainer = styled('div')(() => ({
+  '& h2': {
+    textAlign: 'center',
+    marginBottom: 40,
+  },
+}));
+
+export const TextFieldName = styled(TextField)(() => ({
+  width: '100%',
+  marginBottom: 20,
+}));
+
+export const TextFieldPassword = styled(TextField)(() => ({
+  width: '100%',
+  marginBottom: 20,
+}));
+
+export const TextFieldContainerLogin = styled('div')(() => ({
+  position: 'relative',
+  '& p': {
+    position: 'absolute',
+    top: 15,
+    right: 20,
+    fontSize: 28,
+    zIndex: 20,
+    cursor: 'pointer',
+  },
+}));
+
+export const TextFieldContainerPassword = styled('div')(() => ({
+  position: 'relative',
+  '& p': {
+    position: 'absolute',
+    top: 15,
+    right: 20,
+    fontSize: 28,
+    zIndex: 20,
+    cursor: 'pointer',
+  },
+}));
+
+export const TextFieldContainerPasswordLine = styled('div')(({showPasswordLine}) => ({
+  position: 'absolute',
+  width: 35,
+  height: 2,
+  color: 'black',
+  top: 28,
+  right: 18,
+  backgroundColor: 'black',
+  transform: 'rotate(-45deg)',
+  transformOrigin: 'center',
+  display: showPasswordLine ? 'none' : 'block',
+}));
+
+export const ButtonStyle = styled(Button)(() => ({
+  width: '100%',
+  marginBottom: 10,
+  marginTop: 20,
 }));
