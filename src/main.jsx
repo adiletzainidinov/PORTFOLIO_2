@@ -10,6 +10,7 @@ import {
   loaderFalse,
   loaderTrue,
 } from './store/slices/edit-profile-slice/editProfileSlice.js';
+import Rules from './pages/rules/Rules.jsx';
 
 const Root = () => {
   const isLoading = useSelector((state) => state.editProfile.isLoading);
@@ -23,7 +24,7 @@ const Root = () => {
     if (isLoading) {
       const timer = setTimeout(() => {
         dispatch(loaderFalse());
-      }, 3000);
+      }, 2500);
 
       return () => clearTimeout(timer);
     }

@@ -12,7 +12,11 @@ const style = {
   boxShadow: 24,
   p: 4,
   color: 'black',
-  border: 'none'
+  border: 'none',
+  '@media (max-width: 600px)': {
+    width: '80%',
+  },
+
 };
 
 const Modal = ({ open, onClose, children }) => {

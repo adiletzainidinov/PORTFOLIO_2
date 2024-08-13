@@ -242,6 +242,9 @@ export const ModalContainerBurger = styled('div')(() => ({
   '& h2': {
     textAlign: 'center',
     marginBottom: 40,
+    '@media (max-width: 500px)': {
+      fontSize: 20,
+    },
   },
 }));
 
@@ -279,26 +282,26 @@ export const TextFieldContainerPasswordBurger = styled('div')(() => ({
   },
 }));
 
-export const TextFieldContainerPasswordLineBurger = styled('div')(({showPasswordLine}) => ({
-  position: 'absolute',
-  width: 35,
-  height: 2,
-  color: 'black',
-  top: 28,
-  right: 18,
-  backgroundColor: 'black',
-  transform: 'rotate(-45deg)',
-  transformOrigin: 'center',
-  display: showPasswordLine ? 'none' : 'block',
-}));
+export const TextFieldContainerPasswordLineBurger = styled('div')(
+  ({ showPasswordLine }) => ({
+    position: 'absolute',
+    width: 35,
+    height: 2,
+    color: 'black',
+    top: 28,
+    right: 18,
+    backgroundColor: 'black',
+    transform: 'rotate(-45deg)',
+    transformOrigin: 'center',
+    display: showPasswordLine ? 'none' : 'block',
+  })
+);
 
 export const ButtonStyleBurger = styled(Button)(() => ({
   width: '100%',
   marginBottom: 10,
   marginTop: 20,
 }));
-
-
 
 // Logo
 
@@ -801,18 +804,20 @@ export const TextFieldContainerPassword = styled('div')(() => ({
   },
 }));
 
-export const TextFieldContainerPasswordLine = styled('div')(({showPasswordLine}) => ({
-  position: 'absolute',
-  width: 35,
-  height: 2,
-  color: 'black',
-  top: 28,
-  right: 18,
-  backgroundColor: 'black',
-  transform: 'rotate(-45deg)',
-  transformOrigin: 'center',
-  display: showPasswordLine ? 'none' : 'block',
-}));
+export const TextFieldContainerPasswordLine = styled('div')(
+  ({ showPasswordLine }) => ({
+    position: 'absolute',
+    width: 35,
+    height: 2,
+    color: 'black',
+    top: 28,
+    right: 18,
+    backgroundColor: 'black',
+    transform: 'rotate(-45deg)',
+    transformOrigin: 'center',
+    display: showPasswordLine ? 'none' : 'block',
+  })
+);
 
 export const ButtonStyle = styled(Button)(() => ({
   width: '100%',
