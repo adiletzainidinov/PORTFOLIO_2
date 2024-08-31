@@ -13,7 +13,7 @@ import {
 import Rules from './pages/rules/Rules.jsx';
 
 const Root = () => {
-  const isLoading = useSelector((state) => state.editProfile.isLoading);
+  const { isLoading, rules } = useSelector((state) => state.editProfile);
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -32,7 +32,7 @@ const Root = () => {
 
   return (
     <PersistGate persistor={persistor}>
-      {isLoading ? <Loader /> : <App />}
+      {isLoading ? <Loader /> : rules ? <Rules /> : <App />}
     </PersistGate>
   );
 };

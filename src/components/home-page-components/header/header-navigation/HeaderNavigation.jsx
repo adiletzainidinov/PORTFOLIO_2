@@ -1,11 +1,11 @@
 import AboutHeader from './AboutHeader';
-import Admin from './Admin';
 import BlogsHeader from './BlogsHeader';
 import GitHubIconsHeader from './GitHubIconsHeader';
 import HomeHeader from './HomeHeader';
 import ProjectsHeader from './ProjectsHeader';
 import ResumeHeader from './ResumeHeader';
 import { HeaderNavMain } from '../style-animation/StyledHeader';
+import Admin from './admin/Admin';
 
 const HeaderNavigation = ({
   handleAdminIsvisibilityFalse,
