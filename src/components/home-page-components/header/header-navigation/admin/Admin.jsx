@@ -2,20 +2,13 @@ import React, { useState } from 'react';
 import {
   AdminContainer,
   AdminMeny,
-  ButtonStyle,
   EditAccount,
   IconAdminContainer,
-  ModalContainer,
   StyledButton,
-  TextFieldContainerLogin,
-  TextFieldContainerPassword,
-  TextFieldContainerPasswordLine,
-  TextFieldName,
-  TextFieldPassword,
-} from '../style-animation/StyledHeader';
+} from '../../style-animation/StyledHeader';
 import { useDispatch, useSelector } from 'react-redux';
-import { signIn } from '../../../../store/slices/edit-profile-slice/editProfileSlice';
-import Modal from '../../../../shared/UI/modal/Modal';
+import { signIn } from '../../../../../store/slices/edit-profile-slice/editProfileSlice';
+import ModalAdmin from './ModalAdmin';
 
 const Admin = ({
   adminIsVisibility,
@@ -30,6 +23,8 @@ const Admin = ({
   const [password, setPassword] = useState('');
   const [showPassword, setShowPassword] = useState(false);
   const [errors, setErrors] = useState({});
+
+  console.log(`${isAuth} 'isAuth'`, `${isLoading} 'isLoading'`);
 
   const validate = () => {
     let tempErrors = {};
@@ -51,7 +46,6 @@ const Admin = ({
   const handleLogin = () => {
     if (validate()) {
       dispatch(signIn());
-      console.log(isAuth,isLoading);
     }
   };
   const handleName = (e) => {
@@ -97,53 +91,18 @@ const Admin = ({
           <StyledButton onClick={handleAdminIsvisibilityFalse}>
             Назад
           </StyledButton>
-          <Modal open={open} onClose={handleClose}>
-            <ModalContainer>
-              <form onSubmit={handleSubmit}>
-                <h2>Admin</h2>
-                {errors.name && (
-                  <p style={{ color: 'red', marginBottom: 10 }}>
-                    {errors.name}
-                  </p>
-                )}
-
-                <TextFieldContainerLogin>
-                  <TextFieldName
-                    value={name}
-                    onChange={handleName}
-                    label="login name"
-                    error={!!errors.name}
-                  />
-                  <p>
-                    <ion-icon name="person-outline"></ion-icon>
-                  </p>
-                </TextFieldContainerLogin>
-                {errors.password && (
-                  <p style={{ color: 'red', marginBottom: 10 }}>
-                    {errors.password}
-                  </p>
-                )}
-
-                <TextFieldContainerPassword>
-                  <TextFieldPassword
-                    type={showPassword ? 'text' : 'password'}
-                    value={password}
-                    onChange={handlePassword}
-                    label="password"
-                    error={!!errors.password}
-                  />
-                  <p onClick={handleShowPassword}>
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </p>
-                  <TextFieldContainerPasswordLine
-                    showPasswordLine={showPassword}
-                  />
-                </TextFieldContainerPassword>
-
-                <ButtonStyle type="submit">Войти</ButtonStyle>
-              </form>
-            </ModalContainer>
-          </Modal>
+          <ModalAdmin
+            open={open}
+            handleClose={handleClose}
+            handleSubmit={handleSubmit}
+            errors={errors}
+            name={name}
+            handleName={handleName}
+            password={password}
+            showPassword={showPassword}
+            handlePassword={handlePassword}
+            handleShowPassword={handleShowPassword}
+          />
         </AdminMeny>
       ) : null}
     </>

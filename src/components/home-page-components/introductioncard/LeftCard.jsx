@@ -1,4 +1,3 @@
-import React from 'react';
 import {
   BoxFlex,
   LeftCardContainer,
@@ -10,13 +9,17 @@ import {
   Github,
 } from './StyleIntroductionCard';
 import LinkedinComponent from './Linkedin';
+import { useSelector } from 'react-redux';
 
 const LeftCard = () => {
+  const {isAuth} = useSelector((state) => state.editProfile);
+
+
   return (
     <>
       <LeftCardContainer>
         <TitleContainer>
-          <StaticText variant="h1">Привет, я — Адилет (Ади).</StaticText>
+          <StaticText variant="h1">{isAuth ? 'Привет, я — Адилет (Ади).' : 'Привет, я — Адилет (Ади).'}</StaticText>
           <BoxFlex>
             <StaticText variant="h1" spaced>
               Я
@@ -26,16 +29,15 @@ const LeftCard = () => {
         </TitleContainer>
 
         <SubTitle>
-          Как опытный{' '}
+          Как опытный
           <span style={{ color: '#ae08bc', animation: 'none' }}>
             Frontend-разработчик
           </span>
           , я посвящаю себя воплощению идей в инновационные веб-приложения.
           Ознакомьтесь с моими недавними{' '}
           <span style={{ color: '#ae08bc', animation: 'none' }}>проектами</span>{' '}
-          и{' '}
-          <span style={{ color: '#ae08bc', animation: 'none' }}>статьями</span>,
-          которые демонстрируют мои навыки в Front-End разработке.{' '}
+          и<span style={{ color: '#ae08bc', animation: 'none' }}>статьями</span>
+          , которые демонстрируют мои навыки в Front-End разработке.{' '}
           <span>📍</span>
         </SubTitle>
         <SocialMedia>
