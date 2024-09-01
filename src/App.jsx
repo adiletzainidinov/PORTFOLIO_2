@@ -6,6 +6,7 @@ import Home from './pages/home/AppRouter';
 import About from './pages/about/About';
 import Projects from './pages/projects/Projects';
 import Loader from './pages/loader/Loader';
+import MyResume from './components/resume-page-component/my-resume/MyResume';
 
 const App = () => {
   const router = createBrowserRouter([
@@ -25,6 +26,10 @@ const App = () => {
         {
           path: 'projects',
           element: <Projects />,
+        },
+        {
+          path: 'resume',
+          element: <MyResume />,
         },
       ],
     },
