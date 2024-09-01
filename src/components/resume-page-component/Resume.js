@@ -38,11 +38,40 @@ export const ResumeImg = styled('img')(() => ({
   width: '100%',
   maxWidth: '1000px',
   height: '100%',
+  margin: '0 auto',
+  '@media (max-width: 1200px)': {
+    width: '100%',
+    maxWidth: 736,
+  },
+  '@media (max-width: 990px)': {
+    width: '100%',
+    maxWidth: 600,
+  },
+  '@media (max-width: 766px)': {
+    width: '100%',
+    maxWidth: 400,
+  },
+  '@media (max-width: 450px)': {
+    width: '100%',
+    maxWidth: 350,
+  },
+  '@media (max-width: 400px)': {
+    width: '100%',
+    maxWidth: 300,
+  },
+  '@media (max-width: 350px)': {
+    width: '100%',
+    maxWidth: 250,
+  },
 }));
 
 export const ButtonContainer = styled('div')(() => ({
   display: 'flex',
   justifyContent: 'space-between',
+  '@media (max-width: 450px)': {
+    flexWrap: 'wrap',
+    justifyContent: 'center',
+  },
 }));
 
 export const ButtonPdf = styled(Button)(({ isAnimating }) => ({
@@ -58,5 +87,17 @@ export const ButtonPdf = styled(Button)(({ isAnimating }) => ({
   opacity: isAnimating ? 0.8 : 0.9,
   '&:hover': {
     opacity: 1,
+  },
+  '@media (max-width: 766px)': {
+    width: '100%',
+    maxWidth: 200,
+    fontSize: 18,
+    padding: '10px 15px',
+  },
+  '@media (max-width: 500px)': {
+    width: '100%',
+    maxWidth: 200,
+    fontSize: 18,
+    padding: '10px 15px',
   },
 }));
