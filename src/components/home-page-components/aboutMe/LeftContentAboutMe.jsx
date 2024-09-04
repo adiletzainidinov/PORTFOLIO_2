@@ -1,4 +1,3 @@
-import React from 'react';
 import aboutMe from '../../../assets/images/about-me.png';
 import { AnimatedBox, BoxLeft, ImgBox, StyledImage } from './StyleAboutMe';
 import SpinnerPic from '../../../assets/images/spiner-pic.png';

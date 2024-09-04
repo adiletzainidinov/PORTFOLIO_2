@@ -1,4 +1,3 @@
-import { styled } from '@mui/material';
 import LeftContentAboutMe from './LeftContentAboutMe';
 import RightContentAboutMe from './RightContentAboutMe';
 import { Container, ContentBox, StyledBox } from './StyleAboutMe';
