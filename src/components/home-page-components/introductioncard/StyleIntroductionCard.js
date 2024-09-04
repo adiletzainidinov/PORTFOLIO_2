@@ -10,6 +10,7 @@ import {
   typingSix,
   typingThird,
 } from './animationInproductionCard';
+import Button from '../../../shared/UI/button/Button';
 
 export const CardContainder = styled('div')(() => ({
   marginTop: '70px',
@@ -199,6 +200,28 @@ export const SubTitle = styled('h2')(() => ({
     fontSize: '12px',
   },
 }));
+
+export const TitleText = styled('h2')(() => ({
+  marginBottom: 10,
+  fontSize: 20,
+  fontWeight: 600,
+  color: '#333',
+  textAlign: 'center',
+  lineHeight: 1.2,
+  letterSpacing: '0.05rem',
+  padding: '10px 0',
+  borderBottom: '2px solid #ae08bc',
+}));
+
+export const ButtonParents = styled('div')(() => ({
+  marginTop: 30,
+  display: 'flex',
+  justifyContent: 'space-between',
+}));
+
+export const ButtonBack = styled(Button)(() => ({}));
+
+export const ButtonAdd = styled(Button)(() => ({}));
 
 // Left Card => SocialMedia
 
