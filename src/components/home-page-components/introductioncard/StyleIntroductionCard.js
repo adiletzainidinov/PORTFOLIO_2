@@ -107,22 +107,23 @@ export const TitleContainer = styled('div')`
   }
 `;
 
-export const StaticText = styled(Typography)`
-  font-size: 42px;
-  font-weight: 900;
-  margin-bottom: 16px;
-  @media (max-width: 990px) {
-    width: 100%;
-    font-size: 34px;
-  }
-  @media (max-width: 766px) {
-    width: 100%;
-  }
-  @media (max-width: 420px) {
-    width: 100%;
-    font-size: 24px;
-  }
-`;
+export const StaticText = styled(Typography)(({ isAuth }) => ({
+  fontSize: '42px',
+  fontWeight: 900,
+  marginBottom: '16px',
+  cursor: isAuth ? 'pointer' : 'auto',
+  '@media (max-width: 990px)': {
+    width: '100%',
+    fontSize: '34px',
+  },
+  '@media (max-width: 766px)': {
+    width: '100%',
+  },
+  '@media (max-width: 420px)': {
+    width: '100%',
+    fontSize: '24px',
+  },
+}));
 
 export const BoxFlex = styled('div')(() => ({
   display: 'flex',

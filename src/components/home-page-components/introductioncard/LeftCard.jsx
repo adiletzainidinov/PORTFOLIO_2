@@ -7,97 +7,68 @@ import {
   TitleContainer,
   TypingText,
   Github,
-  ButtonBack,
-  ButtonAdd,
-  ButtonParents,
-  TitleText,
 } from './StyleIntroductionCard';
 import LinkedinComponent from './Linkedin';
-import { useDispatch, useSelector } from 'react-redux';
-import Modal from '../../../shared/UI/modal/Modal';
-import { useEffect, useState } from 'react';
-import { TextField, Typography } from '@mui/material';
-import {
-  aboutMeGet,
-  aboutMeThunk,
-} from '../../../store/slices/edit-profile-slice/editProfile.thunk';
+import { TitleModalLogic, TitleModalLogicWhoIam } from './modals/LogicModals';
+import TitleModal from './modals/TitleModal';
+import SubTitleModalWhoIam from './modals/SubTitleModalWhoIam';
 
 const LeftCard = () => {
-  const dispatch = useDispatch();
-  const { isAuth, data } = useSelector((state) => state.editProfile);
-  const [open, setOpen] = useState(false);
-  const [input, setInput] = useState('');
-  const [error, setError] = useState('');
-  const [displayText, setDisplayText] = useState('Привет, я — Адилет (Ади).');
+  const {
+    isAuth,
+    open,
+    input,
+    error,
+    displayText,
+    handleOpen,
+    handleClose,
+    handleInputValue,
+    handleKeyPress,
+    handleSubmin,
+  } = TitleModalLogic();
 
-  useEffect(() => {
-    dispatch(aboutMeGet());
-  }, [dispatch]);
-
-  useEffect(() => {
-    if (data.length > 0) {
-      const lastItem = data[data.length - 1];
-      setDisplayText(lastItem.text);
-    }
-  }, [data]);
-
-  const handleOpen = () => {
-    setOpen(true);
-  };
-
-  const handleSubmin = () => {
-    if (input.length === 25) {
-      const data = {
-        text: input,
-      };
-      dispatch(aboutMeThunk(data));
-      setOpen(false);
-      setInput('');
-      setError('');
-      setDisplayText(input); 
-    } else {
-      setError('Текст должен состоять ровно из 25 символов.');
-    }
-  };
-
-  const handleInputValue = (e) => {
-    const value = e.target.value;
-
-    if (value.length <= 25) {
-      setInput(value);
-
-      if (value.length < 25) {
-        setError(`Осталось символов: ${25 - value.length}`);
-      } else {
-        setError('Длина текста равна 25 символам.');
-      }
-    } else {
-      setError('Превышен лимит символов!');
-    }
-  };
-
-  const handleKeyPress = (e) => {
-    if (e.key === 'Enter' && input.length === 25) {
-      handleSubmin();
-    }
-  };
-
-  const handleClose = () => {
-    setOpen(false);
-  };
+  const {
+    isAuthWhoIam,
+    openWhoIam,
+    inputWhoIam,
+    errorWhoIam,
+    displayTextWhoIam,
+    handleOpenWhoIam,
+    handleCloseWhoIam,
+    handleInputValueWhoIam,
+    handleKeyPressWhoIam,
+    handleSubminWhoIam,
+    displayTextWhoIamSecond,
+    inputWhoIamSecond
+  } = TitleModalLogicWhoIam();
 
   return (
     <>
       <LeftCardContainer>
         <TitleContainer>
-          <StaticText onClick={isAuth ? handleOpen : undefined} variant="h1">
+          <StaticText
+            isAuth={isAuth}
+            onClick={isAuth ? handleOpen : undefined}
+            variant="h1"
+          >
             {displayText}
           </StaticText>
           <BoxFlex>
-            <StaticText variant="h1" spaced>
-              Я
+            <StaticText
+              variant="h1"
+              spaced
+              onClick={isAuthWhoIam ? handleOpenWhoIam : undefined}
+              isAuthWhoIam={isAuthWhoIam}
+            >
+              {displayTextWhoIam}
             </StaticText>
-            <TypingText variant="h1">Frontend-разработчик</TypingText>
+            <TypingText
+              variant="h1"
+              onClick={isAuthWhoIam ? handleOpenWhoIam : undefined}
+              isAuthWhoIam={isAuthWhoIam}
+            >
+              {displayTextWhoIamSecond}
+            </TypingText>
           </BoxFlex>
         </TitleContainer>
 
@@ -122,33 +93,29 @@ const LeftCard = () => {
           </Github>
         </SocialMedia>
       </LeftCardContainer>
-      <Modal open={open} onClose={handleClose}>
-        <TitleText>
-          Пожалуйста, введите текст длиной ровно 25 символов:
-        </TitleText>
-        <TextField
-          variant="outlined"
-          label="text"
-          fullWidth
-          value={input}
-          onChange={handleInputValue}
-          onKeyPress={handleKeyPress}
-          error={input.length !== 25}
-          inputProps={{ maxLength: 25 }}
-        />
 
-        <Typography color={input.length !== 25 ? 'error' : 'textSecondary'}>
-          {error}
-        </Typography>
-        <ButtonParents>
-          <ButtonBack onClick={handleClose}>Назад</ButtonBack>
-          <ButtonAdd onClick={handleSubmin} disabled={input.length !== 25}>
-            Добавить
-          </ButtonAdd>
-        </ButtonParents>
-      </Modal>
+      <TitleModal
+        open={open}
+        handleClose={handleClose}
+        input={input}
+        handleInputValue={handleInputValue}
+        handleKeyPress={handleKeyPress}
+        error={error}
+        handleSubmin={handleSubmin}
+      />
+
+      <SubTitleModalWhoIam
+        openWhoIam={openWhoIam}
+        handleCloseWhoIam={handleCloseWhoIam}
+        inputWhoIam={inputWhoIam}
+        handleInputValueWhoIam={handleInputValueWhoIam}
+        handleKeyPressWhoIam={handleKeyPressWhoIam}
+        errorWhoIam={errorWhoIam}
+        handleSubminWhoIam={handleSubminWhoIam}
+        inputWhoIamSecond={inputWhoIamSecond}
+      />
     </>
   );
 };
 
-export default LeftCard
+export default LeftCard;

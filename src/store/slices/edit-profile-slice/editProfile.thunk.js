@@ -28,3 +28,33 @@ export const aboutMeThunk = createAsyncThunk(
     }
   }
 );
+
+
+
+export const whoIAmGet = createAsyncThunk(
+  'whoIAm,get',
+  async (_, { rejectWithValue }) => {
+    try {
+      const response = await axios.get(
+        'https://7f3ec3ddcb49231b.mokky.dev/whoIAm'
+      );
+      return response.data;
+    } catch (error) {
+      return rejectWithValue(error.message);
+    }
+  }
+);
+
+export const whoIAmPost = createAsyncThunk(
+  'whoIAm/post',
+  async (data, { rejectWithValue, dispatch }) => {
+    try {
+      await axios.post('https://7f3ec3ddcb49231b.mokky.dev/whoIAm', data);
+
+      dispatch(aboutMeGet());
+    } catch (error) {
+      const axios = error;
+      return rejectWithValue(axios.message);
+    }
+  }
+);
