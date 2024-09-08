@@ -1,5 +1,10 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { aboutMeGet, aboutMeThunk } from './editProfile.thunk';
+import {
+  aboutMeGet,
+  aboutMeThunk,
+  whoIAmGet,
+  whoIAmPost,
+} from './editProfile.thunk';
 
 const initialState = {
   isAuth: false,
@@ -8,6 +13,7 @@ const initialState = {
   loadingText: false,
   error: '',
   data: [],
+  whoIAm: [],
 };
 
 const editProfileSlice = createSlice({
@@ -53,6 +59,29 @@ const editProfileSlice = createSlice({
       state.loadingText = false;
     });
     builder.addCase(aboutMeGet.rejected, (state, action) => {
+      state.loadingText = false;
+      state.error = action.payload;
+    });
+
+    builder.addCase(whoIAmPost.pending, (state) => {
+      state.loadingText = true;
+    });
+    builder.addCase(whoIAmPost.fulfilled, (state) => {
+      state.loadingText = false;
+    });
+    builder.addCase(whoIAmPost.rejected, (state, action) => {
+      state.loadingText = false;
+      state.error = action.payload;
+    });
+
+    builder.addCase(whoIAmGet.pending, (state) => {
+      state.loadingText = true;
+    });
+    builder.addCase(whoIAmGet.fulfilled, (state, action) => {
+      state.whoIAm = action.payload;
+      state.loadingText = false;
+    });
+    builder.addCase(whoIAmGet.rejected, (state, action) => {
       state.loadingText = false;
       state.error = action.payload;
     });
