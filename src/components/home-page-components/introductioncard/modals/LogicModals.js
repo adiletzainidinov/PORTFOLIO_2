@@ -83,13 +83,14 @@ export const TitleModalLogic = () => {
 export const TitleModalLogicWhoIam = () => {
   const dispatch = useDispatch();
   const isAuthWhoIam = useSelector((state) => state.editProfile.isAuth);
-  const dataWhoIam = useSelector((state) => state.editProfile.data);
+  const dataWhoIam = useSelector((state) => state.editProfile.whoIAm);
   const [openWhoIam, setOpenWhoIam] = useState(false);
   const [inputWhoIam, setInputWhoIam] = useState('');
   const [inputWhoIamSecond, setInputWhoIamSecond] = useState('');
   const [errorWhoIam, setErrorWhoIam] = useState('');
   const [displayTextWhoIam, setDisplayTextWhoIam] = useState('Я');
   const [displayTextWhoIamSecond, setDisplayTextWhoIamSecond] = useState('Frontend-разработчик');
+
 
   useEffect(() => {
     dispatch(whoIAmGet());
