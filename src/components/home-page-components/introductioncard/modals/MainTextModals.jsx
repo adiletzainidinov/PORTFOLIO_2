@@ -1,4 +1,4 @@
-import { Box, TextField } from '@mui/material';
+import { Box, FormHelperText, TextField, Typography } from '@mui/material';
 import Modal from '../../../../shared/UI/modal/Modal';
 import { TitleText } from '../StyleIntroductionCard';
 import PropTypes from 'prop-types';
@@ -25,6 +25,27 @@ const MainTextModals = ({
   inputValueMainTextEight,
   handleSubmitMainText,
 }) => {
+
+
+  const totalChars =
+    inputValueMainText.length +
+    inputValueMainTextSecond.length +
+    inputValueMainTextThird.length +
+    inputValueMainTextFour.length +
+    inputValueMainTextFive.length +
+    inputValueMainTextSix.length +
+    inputValueMainTextSeven.length +
+    Math.min(inputValueMainTextEight.length, 5);
+
+  const remainingChars = 211 - totalChars;
+
+  const getMaxLength = (inputLength, isEighth = false) =>
+    isEighth
+      ? Math.min(remainingChars + inputLength, 5)
+      : Math.min(remainingChars + inputLength, 211);
+
+      
+
   return (
     <>
       <Modal open={handleOpenMainText} onClose={handleCloseMainText}>
@@ -36,181 +57,130 @@ const MainTextModals = ({
         <Box sx={{ maxHeight: 200, p: 1, overflowY: 'auto' }}>
           <TextField
             variant="outlined"
-            label="Белый текст"
+            label="1) Белый текст"
             fullWidth
             value={inputValueMainText}
-            onChange={(e) => handleInputValueMainText(e, 'inputWhoIam')}
-            error={
-              inputValueMainText.length +
-                inputValueMainTextSecond.length +
-                inputValueMainTextThird.length +
-                inputValueMainTextFour.length +
-                inputValueMainTextFive.length +
-                inputValueMainTextSix.length +
-                inputValueMainTextSeven.length +
-                inputValueMainTextEight.length !==
-              211
+            onChange={(e) =>
+              handleInputValueMainText(e, 'handleInputValueMainText')
             }
-            inputProps={{ maxLength: 211 }}
+            error={totalChars !== 211}
+            inputProps={{ maxLength: getMaxLength(inputValueMainText.length) }}
             sx={{ mb: 2 }}
           />
           <TextField
             variant="outlined"
-            label="Фиолетовый"
+            label="2) Фиолетовый"
             fullWidth
             value={inputValueMainTextSecond}
-            onChange={(e) => handleInputValueMainTextSecond(e, 'inputWhoIam')}
-            error={
-              inputValueMainText.length +
-                inputValueMainTextSecond.length +
-                inputValueMainTextThird.length +
-                inputValueMainTextFour.length +
-                inputValueMainTextFive.length +
-                inputValueMainTextSix.length +
-                inputValueMainTextSeven.length +
-                inputValueMainTextEight.length !==
-              211
+            onChange={(e) =>
+              handleInputValueMainTextSecond(
+                e,
+                'handleInputValueMainTextSecond'
+              )
             }
-            inputProps={{ maxLength: 211 }}
+            error={totalChars !== 211}
+            inputProps={{
+              maxLength: getMaxLength(inputValueMainTextSecond.length),
+            }}
             sx={{ mb: 2 }}
           />
           <TextField
             variant="outlined"
-            label="Белый текст"
+            label="3) Белый текст"
             fullWidth
             value={inputValueMainTextThird}
-            onChange={(e) => handleInputValueMainTextThird(e, 'inputWhoIam')}
-            error={
-              inputValueMainText.length +
-                inputValueMainTextSecond.length +
-                inputValueMainTextThird.length +
-                inputValueMainTextFour.length +
-                inputValueMainTextFive.length +
-                inputValueMainTextSix.length +
-                inputValueMainTextSeven.length +
-                inputValueMainTextEight.length !==
-              211
+            onChange={(e) =>
+              handleInputValueMainTextThird(e, 'handleInputValueMainTextThird')
             }
-            inputProps={{ maxLength: 211 }}
+            error={totalChars !== 211}
+            inputProps={{
+              maxLength: getMaxLength(inputValueMainTextThird.length),
+            }}
             sx={{ mb: 2 }}
           />
           <TextField
             variant="outlined"
-            label="Фиолетовый"
+            label="4) Фиолетовый"
             fullWidth
             value={inputValueMainTextFour}
-            onChange={(e) => handleInputValueMainTextFour(e, 'inputWhoIam')}
-            error={
-              inputValueMainText.length +
-                inputValueMainTextSecond.length +
-                inputValueMainTextThird.length +
-                inputValueMainTextFour.length +
-                inputValueMainTextFive.length +
-                inputValueMainTextSix.length +
-                inputValueMainTextSeven.length +
-                inputValueMainTextEight.length !==
-              211
+            onChange={(e) =>
+              handleInputValueMainTextFour(e, 'handleInputValueMainTextFour')
             }
-            inputProps={{ maxLength: 211 }}
+            error={totalChars !== 211}
+            inputProps={{
+              maxLength: getMaxLength(inputValueMainTextFour.length),
+            }}
             sx={{ mb: 2 }}
           />
           <TextField
             variant="outlined"
-            label="Белый текст"
+            label="5) Белый текст"
             fullWidth
             value={inputValueMainTextFive}
-            onChange={(e) => handleInputValueMainTextFive(e, 'inputWhoIam')}
-            error={
-              inputValueMainText.length +
-                inputValueMainTextSecond.length +
-                inputValueMainTextThird.length +
-                inputValueMainTextFour.length +
-                inputValueMainTextFive.length +
-                inputValueMainTextSix.length +
-                inputValueMainTextSeven.length +
-                inputValueMainTextEight.length !==
-              211
+            onChange={(e) =>
+              handleInputValueMainTextFive(e, 'handleInputValueMainTextFive')
             }
-            inputProps={{ maxLength: 211 }}
+            error={totalChars !== 211}
+            inputProps={{
+              maxLength: getMaxLength(inputValueMainTextFive.length),
+            }}
             sx={{ mb: 2 }}
           />
           <TextField
             variant="outlined"
-            label="Фиолетовый"
+            label="6) Фиолетовый"
             fullWidth
             value={inputValueMainTextSix}
-            onChange={(e) => handleInputValueMainTextSix(e, 'inputWhoIam')}
-            error={
-              inputValueMainText.length +
-                inputValueMainTextSecond.length +
-                inputValueMainTextThird.length +
-                inputValueMainTextFour.length +
-                inputValueMainTextFive.length +
-                inputValueMainTextSix.length +
-                inputValueMainTextSeven.length +
-                inputValueMainTextEight.length !==
-              211
+            onChange={(e) =>
+              handleInputValueMainTextSix(e, 'handleInputValueMainTextSix')
             }
-            inputProps={{ maxLength: 211 }}
+            error={totalChars !== 211}
+            inputProps={{
+              maxLength: getMaxLength(inputValueMainTextSix.length),
+            }}
             sx={{ mb: 2 }}
           />
           <TextField
             variant="outlined"
-            label="Белый текст"
+            label="7) Белый текст"
             fullWidth
             value={inputValueMainTextSeven}
-            onChange={(e) => handleInputValueMainTextSeven(e, 'inputWhoIam')}
-            error={
-              inputValueMainText.length +
-                inputValueMainTextSecond.length +
-                inputValueMainTextThird.length +
-                inputValueMainTextFour.length +
-                inputValueMainTextFive.length +
-                inputValueMainTextSix.length +
-                inputValueMainTextSeven.length +
-                inputValueMainTextEight.length !==
-              211
+            onChange={(e) =>
+              handleInputValueMainTextSeven(e, 'handleInputValueMainTextSeven')
             }
-            inputProps={{ maxLength: 211 }}
+            error={totalChars !== 211}
+            inputProps={{
+              maxLength: getMaxLength(inputValueMainTextSeven.length),
+            }}
             sx={{ mb: 2 }}
           />
           <TextField
             variant="outlined"
-            label="Белый текст"
+            label="8) Белый текст"
             fullWidth
             value={inputValueMainTextEight}
-            onChange={(e) => handleInputValueMainTextEight(e, 'inputWhoIam')}
-            error={
-              inputValueMainText.length +
-                inputValueMainTextSecond.length +
-                inputValueMainTextThird.length +
-                inputValueMainTextFour.length +
-                inputValueMainTextFive.length +
-                inputValueMainTextSix.length +
-                inputValueMainTextSeven.length +
-                inputValueMainTextEight.length !==
-              211
+            onChange={(e) =>
+              handleInputValueMainTextEight(e, 'handleInputValueMainTextEight')
             }
-            inputProps={{ maxLength: 211 }}
-            sx={{ mb: 2 }}
+            error={totalChars !== 211}
+            inputProps={{
+              maxLength: getMaxLength(inputValueMainTextEight.length, true),
+            }}
           />
         </Box>
+        <FormHelperText sx={{fontSize: 15,mt: 1,ml: 1,lineHeight: '20px'}} error>
+          Общая длина всех полей должна составлять 211 символов.
+        </FormHelperText>
+        <Typography
+        sx={{ml: 1,fontSize: 22}}
+          color={totalChars !== 211 ? 'error' : 'textSecondary'}
+          >
+          Осталось символов: {remainingChars}
+        </Typography>
+        
         <Box sx={{ display: 'flex', justifyContent: 'space-between', mt: 3 }}>
           <Button onClick={handleCloseMainText}>назад</Button>
-          <Button
-            disabled={
-              inputValueMainText.length +
-                inputValueMainTextSecond.length +
-                inputValueMainTextThird.length +
-                inputValueMainTextFour.length +
-                inputValueMainTextFive.length +
-                inputValueMainTextSix.length +
-                inputValueMainTextSeven.length +
-                inputValueMainTextEight.length !==
-              211
-            }
-            onClick={handleSubmitMainText()}
-          >
+          <Button disabled={totalChars !== 211} onClick={handleSubmitMainText}>
             добавить
           </Button>
         </Box>
