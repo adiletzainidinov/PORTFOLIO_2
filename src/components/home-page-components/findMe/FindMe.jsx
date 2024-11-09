@@ -1,4 +1,3 @@
-import React from 'react';
 import Telegram from '../../../assets/images/telegram.jpg';
 import {
   ConnectStyle,

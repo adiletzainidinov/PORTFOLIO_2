@@ -2,6 +2,8 @@ import { createSlice } from '@reduxjs/toolkit';
 import {
   aboutMeGet,
   aboutMeThunk,
+  mainTestGet,
+  maintTextPost,
   whoIAmGet,
   whoIAmPost,
 } from './editProfile.thunk';
@@ -14,6 +16,7 @@ const initialState = {
   error: '',
   data: [],
   whoIAm: [],
+  mainText: []
 };
 
 const editProfileSlice = createSlice({
@@ -40,6 +43,9 @@ const editProfileSlice = createSlice({
     },
   },
   extraReducers: (builder) => {
+
+    // aboutMe
+
     builder.addCase(aboutMeThunk.pending, (state) => {
       state.loadingText = true;
     });
@@ -63,6 +69,8 @@ const editProfileSlice = createSlice({
       state.error = action.payload;
     });
 
+    // whoIAm
+
     builder.addCase(whoIAmPost.pending, (state) => {
       state.loadingText = true;
     });
@@ -85,6 +93,33 @@ const editProfileSlice = createSlice({
       state.loadingText = false;
       state.error = action.payload;
     });
+
+    // mainText
+
+    builder.addCase(maintTextPost.pending, (state) => {
+      state.loadingText = true;
+    });
+    builder.addCase(maintTextPost.fulfilled, (state) => {
+      state.loadingText = false;
+    });
+    builder.addCase(maintTextPost.rejected, (state, action) => {
+      state.loadingText = false;
+      state.error = action.payload;
+    });
+
+    builder.addCase(mainTestGet.pending, (state) => {
+      state.loadingText = true;
+    });
+    builder.addCase(mainTestGet.fulfilled, (state, action) => {
+      state.whoIAm = action.payload;
+      state.loadingText = false;
+    });
+    builder.addCase(mainTestGet.rejected, (state, action) => {
+      state.loadingText = false;
+      state.error = action.payload;
+    });
+
+
   },
 });
 

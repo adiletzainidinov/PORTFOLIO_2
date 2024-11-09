@@ -99,14 +99,16 @@ export const TitleModalLogicWhoIam = () => {
   useEffect(() => {
     if (dataWhoIam.length > 0) {
       const lastItem = dataWhoIam[dataWhoIam.length - 1];
-      setDisplayTextWhoIam(lastItem.text);
+      setDisplayTextWhoIam(lastItem.title || 'Я')
+      setDisplayTextWhoIamSecond(lastItem.subTitle || 'Frontend-разработчик');
     }
   }, [dataWhoIam]);
 
   const handleOpenWhoIam = () => setOpenWhoIam(true);
   const handleCloseWhoIam = () => setOpenWhoIam(false);
 
-  const handleSubminWhoIam = () => {
+  const 
+  handleSubminWhoIam = () => {
     if (inputWhoIam.length + inputWhoIamSecond.length === 21) {
       const newData = { title: inputWhoIam, subTitle: inputWhoIamSecond };
       dispatch(whoIAmPost(newData));
