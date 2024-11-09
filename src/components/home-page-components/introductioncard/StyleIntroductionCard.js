@@ -286,7 +286,6 @@ export const Linkedin = styled('div')({
   fontSize: '42px',
   transition: 'transform 0.3s ease-in-out, color 0.3s ease-in-out',
   cursor: 'pointer',
-  zIndex: 10000,
   animation: `${idleAnimation} 4s ease-in-out infinite`, // Анимация в спокойном состоянии
 
   '& p': {
@@ -307,7 +306,6 @@ export const Github = styled('div')({
   fontSize: '42px',
   transition: 'transform 0.3s ease-in-out, color 0.3s ease-in-out',
   cursor: 'pointer',
-  zIndex: 10000,
   animation: `${idleAnimation} 4s ease-in-out infinite`, // Анимация в спокойном состоянии
 
   '& p': {
