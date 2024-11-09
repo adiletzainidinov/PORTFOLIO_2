@@ -8,6 +8,7 @@ import {
 } from '../StyleIntroductionCard';
 import Modal from '../../../../shared/UI/modal/Modal';
 
+
 const SubTitleModalWhoIam = ({
   handleCloseWhoIam,
   inputWhoIam,
