@@ -13,12 +13,16 @@ import { TitleModalLogic, TitleModalLogicWhoIam } from './modals/LogicModals';
 import TitleModal from './modals/TitleModal';
 import SubTitleModalWhoIam from './modals/SubTitleModalWhoIam';
 import MainTextModals from './modals/MainTextModals';
-import { useState } from 'react';
-import { useDispatch } from 'react-redux';
-import { maintTextPost } from '../../../store/slices/edit-profile-slice/editProfile.thunk';
+import { useEffect, useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import {
+  mainTestGet,
+  maintTextPost,
+} from '../../../store/slices/edit-profile-slice/editProfile.thunk';
 
 const LeftCard = () => {
   const dispatch = useDispatch();
+  const { mainText } = useSelector((state) => state.editProfile);
   const [openMainText, setOpenMainText] = useState(false);
   const [inputValueMainText, setInputValueMainText] = useState('');
   const [inputValueMainTextSecond, setInputValueMainTextSecond] = useState('');
@@ -115,6 +119,28 @@ const LeftCard = () => {
     setInputValueMainTextEight(e.target.value);
   };
 
+  useEffect(() => {
+    dispatch(mainTestGet());
+  }, [dispatch]);
+
+
+  useEffect(() => {
+    if (mainText.length > 0) {
+      const lastItem = mainText[mainText.length - 1];
+      setDisplayMainText(lastItem.first || 'Как опытный');
+      setDisplayMainTextSecond(lastItem.second || 'Frontend-разработчик');
+      setDisplayMainTextThird(
+        lastItem.third ||
+          `, я посвящаю себя воплощению идей в инновационные веб-приложения.
+          Ознакомьтесь с моими недавними`
+      );
+      setDisplayMainTextFour(lastItem.four || `проектами`);
+      setDisplayMainTextFive(lastItem.five || `и`)
+      setDisplayMainTextSix(lastItem.six || 'статьями')
+      setDisplayMainTextSeven(lastItem.seven || ', которые демонстрируют мои навыки в Front-End разработке.')
+      setDisplayMainTextEight(lastItem.eight || '📍')
+    }
+  }, [mainText]);
   const handleSubmitMainText = () => {
     if (
       inputValueMainText.length +
@@ -201,7 +227,7 @@ const LeftCard = () => {
           <span style={{ color: '#ae08bc', animation: 'none' }}>
             {displayMaintextSix}
           </span>
-          {displayMaintextSeven} <span >{displayMaintextEight}</span>
+          {displayMaintextSeven} <span>{displayMaintextEight}</span>
         </SubTitle>
         <SocialMedia>
           <LinkedinComponent />
@@ -259,17 +285,3 @@ const LeftCard = () => {
 };
 
 export default LeftCard;
-
-// <SubTitle onClick={isAuthWhoIam ? handleOpenMainText : undefined}>
-// Как опытный{' '}
-// <span style={{ color: '#ae08bc', animation: 'none' }}>
-//   Frontend-разработчик
-// </span>
-// , я посвящаю себя воплощению идей в инновационные веб-приложения.
-// Ознакомьтесь с моими недавними{' '}
-// <span style={{ color: '#ae08bc', animation: 'none' }}>проектами</span>{' '}
-// и{' '}
-// <span style={{ color: '#ae08bc', animation: 'none' }}>статьями</span>,
-// которые демонстрируют мои навыки в Front-End разработке.{' '}
-// <span>📍</span>
-// </SubTitle>

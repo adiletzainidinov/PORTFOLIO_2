@@ -166,3 +166,6 @@ export const TitleModalLogicWhoIam = () => {
     handleSubminWhoIam
   };
 };
+
+// MainTextModal Logic
+

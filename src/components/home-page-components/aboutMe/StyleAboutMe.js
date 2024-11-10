@@ -121,13 +121,10 @@ export const StyledImage = styled('img')(() => ({
     height: 350,
   },
   '@media (max-width: 600px)': {
-    width: '100%',
-    maxWidth: 240,
     maxHeight: 250,
   },
   '@media (max-width: 420px)': {
-    width: '100%',
-    maxWidthidth: 200,
+    width: '250px',
     height: 210,
   },
 }));

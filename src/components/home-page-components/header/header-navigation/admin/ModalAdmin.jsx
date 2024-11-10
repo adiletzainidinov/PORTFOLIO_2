@@ -1,4 +1,3 @@
-import React from 'react';
 import Modal from '../../../../../shared/UI/modal/Modal';
 import {
   ButtonStyle,

@@ -22,6 +22,15 @@ export const FindStyle = styled('h2')(() => ({
   fontSize: '42px',
   fontWeight: 500,
   marginBottom: 20,
+  '@media (max-width: 990px)': {
+    fontSize: '36px',
+  },
+  '@media (max-width: 600px)': {
+    fontSize: '32px',
+  },
+  '@media (max-width: 420px)': {
+    fontSize: '28px',
+  },
 }));
 
 export const ConnectStyle = styled('p')(() => ({

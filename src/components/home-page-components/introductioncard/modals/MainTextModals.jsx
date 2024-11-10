@@ -25,8 +25,6 @@ const MainTextModals = ({
   inputValueMainTextEight,
   handleSubmitMainText,
 }) => {
-
-
   const totalChars =
     inputValueMainText.length +
     inputValueMainTextSecond.length +
@@ -43,8 +41,6 @@ const MainTextModals = ({
     isEighth
       ? Math.min(remainingChars + inputLength, 5)
       : Math.min(remainingChars + inputLength, 211);
-
-      
 
   return (
     <>
@@ -168,17 +164,28 @@ const MainTextModals = ({
             }}
           />
         </Box>
-        <FormHelperText sx={{fontSize: 15,mt: 1,ml: 1,lineHeight: '20px'}} error>
+        <FormHelperText
+          sx={{ fontSize: 15, mt: 1, ml: 1, lineHeight: '20px' }}
+          error
+        >
           Общая длина всех полей должна составлять 211 символов.
         </FormHelperText>
         <Typography
-        sx={{ml: 1,fontSize: 22}}
+          sx={{ ml: 1, fontSize: 22 }}
           color={totalChars !== 211 ? 'error' : 'textSecondary'}
-          >
+        >
           Осталось символов: {remainingChars}
         </Typography>
-        
-        <Box sx={{ display: 'flex', justifyContent: 'space-between', mt: 3 }}>
+
+        <Box
+          sx={{
+            display: 'flex',
+            justifyContent: 'space-between',
+            mt: 3,
+            flexWrap: 'wrap',
+            gap: '10px',
+          }}
+        >
           <Button onClick={handleCloseMainText}>назад</Button>
           <Button disabled={totalChars !== 211} onClick={handleSubmitMainText}>
             добавить
