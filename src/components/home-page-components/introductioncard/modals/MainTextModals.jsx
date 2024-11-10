@@ -42,6 +42,16 @@ const MainTextModals = ({
       ? Math.min(remainingChars + inputLength, 5)
       : Math.min(remainingChars + inputLength, 211);
 
+  const isFormValid =
+    inputValueMainText.length > 0 &&
+    inputValueMainTextSecond.length > 0 &&
+    inputValueMainTextThird.length > 0 &&
+    inputValueMainTextFour.length > 0 &&
+    inputValueMainTextFive.length > 0 &&
+    inputValueMainTextSix.length > 0 &&
+    inputValueMainTextSeven.length > 0 &&
+    inputValueMainTextEight.length > 0;
+
   return (
     <>
       <Modal open={handleOpenMainText} onClose={handleCloseMainText}>
@@ -165,11 +175,12 @@ const MainTextModals = ({
           />
         </Box>
         <FormHelperText
-          sx={{ fontSize: 15, mt: 1, ml: 1, lineHeight: '20px' }}
-          error
-        >
-          Общая длина всех полей должна составлять 211 символов.
-        </FormHelperText>
+  sx={{ fontSize: 15, mt: 1, ml: 1, lineHeight: '20px' }}
+  error
+>
+  Все поля должны быть заполнены хотя бы одним символом, а общая длина всех полей должна составлять 211 символов.
+</FormHelperText>
+
         <Typography
           sx={{ ml: 1, fontSize: 22 }}
           color={totalChars !== 211 ? 'error' : 'textSecondary'}
@@ -187,7 +198,7 @@ const MainTextModals = ({
           }}
         >
           <Button onClick={handleCloseMainText}>назад</Button>
-          <Button disabled={totalChars !== 211} onClick={handleSubmitMainText}>
+          <Button disabled={totalChars !== 211 || !isFormValid} onClick={handleSubmitMainText}>
             добавить
           </Button>
         </Box>

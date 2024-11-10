@@ -57,19 +57,19 @@ export const whoIAmPost = createAsyncThunk(
   }
 );
 
-export const mainTestGet = createAsyncThunk(
-  'mainText/get',
-  async (_, { rejectWithValue }) => {
-    try {
-      const response = await axios.get(
-        'https://7f3ec3ddcb49231b.mokky.dev/mainText'
-      );
-      return response.data;
-    } catch (error) {
-      return rejectWithValue(error.message);
+  export const mainTestGet = createAsyncThunk(
+    'mainText/get',
+    async (_, { rejectWithValue }) => {
+      try {
+        const response = await axios.get(
+          'https://7f3ec3ddcb49231b.mokky.dev/mainText'
+        );
+        return response.data;
+      } catch (error) {
+        return rejectWithValue(error.message);
+      }
     }
-  }
-);
+  );
 
 export const maintTextPost = createAsyncThunk(
   'mainText/post',

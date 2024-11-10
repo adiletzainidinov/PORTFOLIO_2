@@ -141,6 +141,7 @@ const LeftCard = () => {
       setDisplayMainTextEight(lastItem.eight || '📍')
     }
   }, [mainText]);
+  console.log(mainText)
 
   const handleSubmitMainText = () => {
     if (
@@ -184,6 +185,18 @@ const LeftCard = () => {
       setOpenMainText(false);
     }
   };
+  console.log(
+    "Current length:",
+    displayMaintext.length +
+    displayMaintextSecond.length +
+    displayMaintextThird.length +
+    displayMaintextFour.length +
+    displayMaintextFive.length +
+    displayMaintextSix.length +
+    displayMaintextSeven.length +
+    displayMaintextEight.length
+  );
+  
 
   return (
     <>

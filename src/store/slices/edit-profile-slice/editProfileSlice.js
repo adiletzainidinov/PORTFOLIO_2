@@ -111,7 +111,7 @@ const editProfileSlice = createSlice({
       state.loadingText = true;
     });
     builder.addCase(mainTestGet.fulfilled, (state, action) => {
-      state.whoIAm = action.payload;
+      state.mainText = action.payload;
       state.loadingText = false;
     });
     builder.addCase(mainTestGet.rejected, (state, action) => {
