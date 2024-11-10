@@ -125,8 +125,8 @@ const LeftCard = () => {
 
 
   useEffect(() => {
-    if (mainText.length > 0) {
-      const lastItem = mainText[mainText.length - 1];
+    if (mainText?.length > 0) {
+      const lastItem = mainText[mainText?.length - 1];
       setDisplayMainText(lastItem.first || 'Как опытный');
       setDisplayMainTextSecond(lastItem.second || 'Frontend-разработчик');
       setDisplayMainTextThird(
@@ -141,16 +141,17 @@ const LeftCard = () => {
       setDisplayMainTextEight(lastItem.eight || '📍')
     }
   }, [mainText]);
+
   const handleSubmitMainText = () => {
     if (
-      inputValueMainText.length +
-        inputValueMainTextSecond.length +
-        inputValueMainTextThird.length +
-        inputValueMainTextFour.length +
-        inputValueMainTextFive.length +
-        inputValueMainTextSix.length +
-        inputValueMainTextSeven.length +
-        inputValueMainTextEight.length ===
+      inputValueMainText?.length +
+        inputValueMainTextSecond?.length +
+        inputValueMainTextThird?.length +
+        inputValueMainTextFour?.length +
+        inputValueMainTextFive?.length +
+        inputValueMainTextSix?.length +
+        inputValueMainTextSeven?.length +
+        inputValueMainTextEight?.length ===
       211
     ) {
       const newDataMainText = {

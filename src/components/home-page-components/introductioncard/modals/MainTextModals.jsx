@@ -26,14 +26,14 @@ const MainTextModals = ({
   handleSubmitMainText,
 }) => {
   const totalChars =
-    inputValueMainText.length +
-    inputValueMainTextSecond.length +
-    inputValueMainTextThird.length +
-    inputValueMainTextFour.length +
-    inputValueMainTextFive.length +
-    inputValueMainTextSix.length +
-    inputValueMainTextSeven.length +
-    Math.min(inputValueMainTextEight.length, 5);
+    inputValueMainText?.length +
+    inputValueMainTextSecond?.length +
+    inputValueMainTextThird?.length +
+    inputValueMainTextFour?.length +
+    inputValueMainTextFive?.length +
+    inputValueMainTextSix?.length +
+    inputValueMainTextSeven?.length +
+    Math.min(inputValueMainTextEight?.length, 5);
 
   const remainingChars = 211 - totalChars;
 
@@ -76,7 +76,7 @@ const MainTextModals = ({
             }
             error={totalChars !== 211}
             inputProps={{
-              maxLength: getMaxLength(inputValueMainTextSecond.length),
+              maxLength: getMaxLength(inputValueMainTextSecond?.length),
             }}
             sx={{ mb: 2 }}
           />
@@ -90,7 +90,7 @@ const MainTextModals = ({
             }
             error={totalChars !== 211}
             inputProps={{
-              maxLength: getMaxLength(inputValueMainTextThird.length),
+              maxLength: getMaxLength(inputValueMainTextThird?.length),
             }}
             sx={{ mb: 2 }}
           />
@@ -104,7 +104,7 @@ const MainTextModals = ({
             }
             error={totalChars !== 211}
             inputProps={{
-              maxLength: getMaxLength(inputValueMainTextFour.length),
+              maxLength: getMaxLength(inputValueMainTextFour?.length),
             }}
             sx={{ mb: 2 }}
           />
@@ -118,7 +118,7 @@ const MainTextModals = ({
             }
             error={totalChars !== 211}
             inputProps={{
-              maxLength: getMaxLength(inputValueMainTextFive.length),
+              maxLength: getMaxLength(inputValueMainTextFive?.length),
             }}
             sx={{ mb: 2 }}
           />
@@ -132,7 +132,7 @@ const MainTextModals = ({
             }
             error={totalChars !== 211}
             inputProps={{
-              maxLength: getMaxLength(inputValueMainTextSix.length),
+              maxLength: getMaxLength(inputValueMainTextSix?.length),
             }}
             sx={{ mb: 2 }}
           />
@@ -146,7 +146,7 @@ const MainTextModals = ({
             }
             error={totalChars !== 211}
             inputProps={{
-              maxLength: getMaxLength(inputValueMainTextSeven.length),
+              maxLength: getMaxLength(inputValueMainTextSeven?.length),
             }}
             sx={{ mb: 2 }}
           />
@@ -160,7 +160,7 @@ const MainTextModals = ({
             }
             error={totalChars !== 211}
             inputProps={{
-              maxLength: getMaxLength(inputValueMainTextEight.length, true),
+              maxLength: getMaxLength(inputValueMainTextEight?.length, true),
             }}
           />
         </Box>
