@@ -197,15 +197,15 @@ export const Title = styled('h2')(() => ({
   marginBottom: 20,
   '@media (max-width: 1200px)': {
     width: '100%',
-    fontSize: 28,
+    fontSize: 32,
   },
   '@media (max-width: 990px)': {
     width: '100%',
-    fontSize: 24,
+    fontSize: 28,
   },
   '@media (max-width: 420px)': {
     width: '100%',
-    fontSize: 22,
+    fontSize: 26,
   },
 }));
 
@@ -215,15 +215,15 @@ export const SubTitle = styled('h2')(() => ({
   marginBottom: 20,
   '@media (max-width: 1200px)': {
     width: '100%',
-    fontSize: 20,
+    fontSize: 24,
   },
   '@media (max-width: 990px)': {
     width: '100%',
-    fontSize: 18,
+    fontSize: 22,
   },
   '@media (max-width: 420px)': {
     width: '100%',
-    fontSize: 16,
+    fontSize: 20,
   },
 }));
 
@@ -236,16 +236,15 @@ export const MainText = styled('h2')(() => ({
   lineHeight: '32px',
   '@media (max-width: 1200px)': {
     width: '100%',
-    fontSize: 16,
+    fontSize: 18,
     lineHeight: '28px',
   },
   '@media (max-width: 990px)': {
     width: '100%',
-    fontSize: 14,
+    fontSize: 16,
   },
   '@media (max-width: 420px)': {
     width: '100%',
-    fontSize: 12,
     fontWeight: 500
   },
 }));
