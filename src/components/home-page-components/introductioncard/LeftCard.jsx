@@ -17,6 +17,7 @@ import {
 import TitleModal from './modals/TitleModal';
 import SubTitleModalWhoIam from './modals/SubTitleModalWhoIam';
 import MainTextModals from './modals/MainTextModals';
+import { motion } from 'framer-motion';
 
 const LeftCard = () => {
   const {
@@ -112,21 +113,34 @@ const LeftCard = () => {
           </BoxFlex>
         </TitleContainer>
 
-        <SubTitle onClick={isAuthWhoIam ? handleOpenMainText : undefined}>
-          {displayMaintext}{' '}
-          <span style={{ color: '#ae08bc', animation: 'none' }}>
-            {displayMaintextSecond}
-          </span>
-          {displayMaintextThird}{' '}
-          <span style={{ color: '#ae08bc', animation: 'none' }}>
-            {displayMaintextFour}
-          </span>{' '}
-          {displayMaintextFive}{' '}
-          <span style={{ color: '#ae08bc', animation: 'none' }}>
-            {displayMaintextSix}
-          </span>
-          {displayMaintextSeven} <span>{displayMaintextEight}</span>
-        </SubTitle>
+        <motion.div initial={{
+          x: -1000,
+          opacity: 0
+        }}
+        animate={{
+          x: 0,
+          opacity: 1
+        }}
+        transition={{
+          duration: 1
+        }}>
+          <SubTitle onClick={isAuthWhoIam ? handleOpenMainText : undefined}>
+            {displayMaintext}{' '}
+            <span style={{ color: '#ae08bc', animation: 'none' }}>
+              {displayMaintextSecond}
+            </span>
+            {displayMaintextThird}{' '}
+            <span style={{ color: '#ae08bc', animation: 'none' }}>
+              {displayMaintextFour}
+            </span>{' '}
+            {displayMaintextFive}{' '}
+            <span style={{ color: '#ae08bc', animation: 'none' }}>
+              {displayMaintextSix}
+            </span>
+            {displayMaintextSeven} <span>{displayMaintextEight}</span>
+          </SubTitle>
+        </motion.div>
+
         <SocialMedia>
           <LinkedinComponent />
           <Github onClick={handleGithub}>
