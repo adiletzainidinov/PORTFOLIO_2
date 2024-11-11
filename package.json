@@ -18,6 +18,7 @@
     "@popperjs/core": "^2.11.8",
     "@reduxjs/toolkit": "^2.2.7",
     "axios": "^1.7.7",
+    "framer-motion": "^11.11.11",
     "gsap": "^3.12.5",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
